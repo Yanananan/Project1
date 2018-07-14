@@ -45,17 +45,7 @@ var config = {
     for (var dest in destinations) {
         destinations[dest].clicks = numberOfClicks[dest];
     }
-
-    // destinations[0].clicks = numberOfClicks[0];
-    // destinations[1].clicks = numberOfClicks[1];
-    // destinations["Havana"].clicks = numberOfClicks[2];
-    // destinations["Tokyo"].clicks = numberOfClicks[3];
-    // destinations["Johannesburg"].clicks = numberOfClicks[4];
-    // destinations["Manilla"].clicks = numberOfClicks[5];
-    // destinations["Seoul"].clicks = numberOfClicks[6];
-    // destinations["Sydney"].clicks = numberOfClicks[7];
-    // destinations["Vancouver"].clicks = numberOfClicks[8];
-    // destinations["Reykjavik"].clicks = numberOfClicks[9];
+    
   });
 
 
