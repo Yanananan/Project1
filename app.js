@@ -12,11 +12,11 @@ var destination = {
     Reykjavik: {country: "Iceland", currencyCode: "ISK", flightInfo: "flight 1", stufftodo: "asldkfjsl"}
 }
 
-var weatherCount = 1;
+
 //weather API JS
+var weatherCount = 1;
 // This is our API key. Add your own API key between the ""
 //var weatherAPIKey = "798ea114a6654cf1a775a5fce9773800";
-
 //2nd API key
 var weatherAPIKey = "d248772fc33441a58bfa6336cdc83ae6";
 
@@ -29,14 +29,14 @@ var newTable, newTr, newTd;
 var queryURLResponse;
 var resCount = 0;
 
-debugger;
+//debugger;
 
 for(var city in destination)
 {
     //debugger;
     
     country = destination[city]["country"];  //FIX
- 
+    debugger;
     getWeather(city,country);
     //debugger;
     
@@ -67,7 +67,7 @@ function getWeather(a,b)
     console.log(queryURL);
     $.ajax({url: queryURL}).then(function(response){
         //var content = "";
-        //debugger;
+        debugger;
         destination[a].weather = response;
         resCount++;
         if(resCount == 10)
