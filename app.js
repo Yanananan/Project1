@@ -15,13 +15,14 @@ var config = {
   // Create a variable to reference the database.
   var database = firebase.database();
   var travelID;
-  var dest1_clicks, dest2_clicks, dest3_clicks,
+  var dest0_clicks, dest1_clicks, dest2_clicks, dest3_clicks,
       dest4_clicks, dest5_clicks, dest6_clicks, dest7_clicks,
-      dest8_clicks, dest9_clicks, dest10_clicks;
+      dest8_clicks, dest9_clicks;
   var travel_packages = database.ref().child('travel_packages');
 
   travel_packages.on('value', function(snap) {
 
+      dest0_clicks = snap.val().dest0.clicks;
       dest1_clicks = snap.val().dest1.clicks;
       dest2_clicks = snap.val().dest2.clicks;
       dest3_clicks = snap.val().dest3.clicks;
@@ -31,7 +32,6 @@ var config = {
       dest7_clicks = snap.val().dest7.clicks;
       dest8_clicks = snap.val().dest8.clicks;
       dest9_clicks = snap.val().dest9.clicks;
-      dest10_clicks = snap.val().dest10.clicks;
   });
 
 
@@ -42,35 +42,39 @@ var config = {
         numberOfClicks.push(child.val().clicks);
     });
 
-    destinations["Bridgetown"].clicks = numberOfClicks[0];
-    destinations["Zurich"].clicks = numberOfClicks[1];
-    destinations["Havana"].clicks = numberOfClicks[2];
-    destinations["Tokyo"].clicks = numberOfClicks[3];
-    destinations["Johannesburg"].clicks = numberOfClicks[4];
-    destinations["Manilla"].clicks = numberOfClicks[5];
-    destinations["Seoul"].clicks = numberOfClicks[6];
-    destinations["Sydney"].clicks = numberOfClicks[7];
-    destinations["Vancouver"].clicks = numberOfClicks[8];
-    destinations["Reykjavik"].clicks = numberOfClicks[9];
+    for (var dest in destinations) {
+        destinations[dest].clicks = numberOfClicks[dest];
+    }
+
+    // destinations[0].clicks = numberOfClicks[0];
+    // destinations[1].clicks = numberOfClicks[1];
+    // destinations["Havana"].clicks = numberOfClicks[2];
+    // destinations["Tokyo"].clicks = numberOfClicks[3];
+    // destinations["Johannesburg"].clicks = numberOfClicks[4];
+    // destinations["Manilla"].clicks = numberOfClicks[5];
+    // destinations["Seoul"].clicks = numberOfClicks[6];
+    // destinations["Sydney"].clicks = numberOfClicks[7];
+    // destinations["Vancouver"].clicks = numberOfClicks[8];
+    // destinations["Reykjavik"].clicks = numberOfClicks[9];
   });
 
 
 
   $('.box').on('click', function() {
-      var numOfClicks = [dest1_clicks,dest2_clicks, dest3_clicks, dest4_clicks, dest5_clicks, dest6_clicks, dest7_clicks, dest8_clicks, dest9_clicks, dest10_clicks];
+      var numOfClicks = [dest0_clicks, dest1_clicks,dest2_clicks, dest3_clicks, dest4_clicks, dest5_clicks, dest6_clicks, dest7_clicks, dest8_clicks, dest9_clicks];
 
       travelID = $(this).attr('id');
       var lastChar = travelID.substr(4);
-      numOfClicks[lastChar - 1]++;
+      numOfClicks[lastChar]++;
       database.ref(`travel_packages/${travelID}`).set({
-        clicks: numOfClicks[lastChar - 1]
+        clicks: numOfClicks[lastChar]
       });
     });
 
     var destinations = [
         {city: "Bridgetown",
-            country: "Barbados", 
-            currencyCode: "BBD", 
+            country: "Barbados",
+            currencyCode: "BBD",
             clicks: 11,
             flightInfo: {
                 jul1: "870", jul2: "870", jul3: "870", jul4: "870",
@@ -85,11 +89,11 @@ var config = {
                 apr1: "850", apr2: "617", apr3: "532", apr4: "565",
                 may1: "673", may2: "673", may3: "673", may4: "673",
                 jun1: "702", jun2: "774", jun3:"1008", jun4:"1008",
-            }, 
+            },
             stufftodo: "asldkfjsl"},
         {city: "Zurich",
-            country: "Switzerland", 
-            currencyCode: "CHF", 
+            country: "Switzerland",
+            currencyCode: "CHF",
             clicks: 2,
             flightInfo: {
                 aug1: "820", aug2:"1264", aug3:"1150", aug4: "565",
@@ -104,11 +108,11 @@ var config = {
                 may1: "706", may2: "706", may3: "706", may4: "706",
                 jun1:"1108", jun2:"1108", jun3:"1108", jun4:"1108",
                 jul1:"1521", jul2:"1521", jul3:"1648", jul4:"1648",
-            }, 
+            },
             stufftodo: "asldkfjsl"},
         {city: "Havana",
-            country: "Cuba", 
-            currencyCode: "CUP", 
+            country: "Cuba",
+            currencyCode: "CUP",
             clicks: 3,
             flightInfo: {
                 jul1: "542", jul2: "542", jul3: "542", jul4: "542",
@@ -123,11 +127,11 @@ var config = {
                 apr1: "437", apr2: "437", apr3: "437", apr4: "437",
                 may1: "403", may2: "403", may3: "403", may4: "403",
                 jun1: "481", jun2: "481", jun3: "481", jun4: "481",
-            }, 
+            },
             stufftodo: "asldkfjsl"},
         {city: "Tokyo",
-            country: "Japan", 
-            currencyCode: "JPY", 
+            country: "Japan",
+            currencyCode: "JPY",
             clicks: 4,
             flightInfo: {
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
@@ -142,11 +146,11 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            }, 
+            },
             stufftodo: "asldkfjsl"},
         {city: "Johannesburg",
-            country: "South Africa", 
-            currencyCode: "ZAR", 
+            country: "South Africa",
+            currencyCode: "ZAR",
             clicks: 5,
             flightInfo: {//copied from japan
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
@@ -161,11 +165,11 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            }, 
+            },
             stufftodo: "asldkfjsl"},
-        {city: "Manilla",
-            country: "The Philippines", 
-            currencyCode: "PHP", 
+        {city: "Manila",
+            country: "Philippines",
+            currencyCode: "PHP",
             clicks: 6,
             flightInfo: {//copied from japan
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
@@ -180,11 +184,11 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            }, 
+            },
             stufftodo: "asldkfjsl"},
         {city: "Seoul",
-            country: "South Korea", 
-            currencyCode: "KRW", 
+            country: "South Korea",
+            currencyCode: "KRW",
             clicks: 7,
             flightInfo: {//copied from japan
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
@@ -199,11 +203,11 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            }, 
+            },
             stufftodo: "asldkfjsl"},
         {city: "Sydney",
-            country: "Australia", 
-            currencyCode: "AUD", 
+            country: "Australia",
+            currencyCode: "AUD",
             clicks: 8,
             flightInfo: {//copied from japan
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
@@ -218,11 +222,11 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            }, 
+            },
             stufftodo: "asldkfjsl"},
         {city: "Vancouver",
-            country: "Canada", 
-            currencyCode: "CAD", 
+            country: "Canada",
+            currencyCode: "CAD",
             clicks: 9,
             flightInfo: {//copied from japan
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
@@ -237,11 +241,11 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            }, 
+            },
             stufftodo: "asldkfjsl"},
         {city: "Reykjavik",
-            country: "Iceland", 
-            currencyCode: "ISK", 
+            country: "Iceland",
+            currencyCode: "ISK",
             clicks: 10,
             flightInfo: {//copied from japan
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
@@ -256,7 +260,7 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            }, 
+            },
             stufftodo: "asldkfjsl"}
         ]
 
@@ -270,26 +274,26 @@ var config = {
             }
         }
         fillCityName();
-        
+
         var currencyURL = "http://apilayer.net/api/list?access_key=a7f50bef8b2879efd43630712a46b389";
         var currencyResponse = $.ajax({
             url: currencyURL,
         });
-            
+
         var rateURL = "http://www.apilayer.net/api/live?access_key=a7f50bef8b2879efd43630712a46b389";
         var rateResponse = $.ajax({
             url: rateURL,
         });
-        
+
         function fillCurrencyInfo(){
             var currencyList = currencyResponse.responseJSON.currencies;
             console.log("currencyList:");
             console.log(currencyList);
-        
+
             var rateList = rateResponse.responseJSON.quotes;
             console.log("rateList:");
             console.log(rateList);
-        
+
             var currencyDiv, currencyText, countryCode;
             for (var i in destinations){
                 currencyDiv = "#dest"+i+" .currency";
@@ -300,18 +304,18 @@ var config = {
                 $(currencyDiv).text(currencyText);
             }
         }
-        
+
         jQuery.when(currencyResponse,rateResponse).done(fillCurrencyInfo);
-        
+
             //code for populating currency data
             // var currencyList = currencyResponse.responseJSON.currencies;
             // console.log("currencyList:");
             // console.log(currencyList);
-        
+
             // var rateList = rateResponse.responseJSON.quotes;
             // console.log("rateList:");
             // console.log(rateList);
-        
+
             // var currencyDiv, currencyText, countryCode;
             // for (var i in destinations){
             //     currencyDiv = "#dest"+i+" .currency";
@@ -322,10 +326,10 @@ var config = {
             //     $(currencyDiv).text(currencyText);
             // }
             //end of code for populating currency data
-        
-        
-        
-        
+
+
+
+
         $("#sortPopular").on("click",function(){
             var sortedDestinations = [];
             destinations.sort(function(a,b){
@@ -365,12 +369,12 @@ for(var i = 0; i<destinations.length; i++)
     //debugger;
     //obj = destinations[i];
     city = destinations[i].city;
-    
+
     country =  destinations[i].country; //FIX
     //debugger;
     getWeather(city,country);
     //debugger;
-    
+
 }
 
 function displayWeather()
@@ -386,12 +390,12 @@ function displayWeather()
             content += "<h6>Precipitation: "+ destinations[i].weather.data[j].pop +"%</h6>";
             content += "<img src = 'https://www.weatherbit.io/static/img/icons/"+ destinations[i].weather.data[j].weather.icon+".png' alt='icon' width='30' height='30'>";
             content += "<br><h6>"+ destinations[i].weather.data[j].weather.description +"</h6>";
-            $("#dest"+weatherCount+" .weather #day"+(j+1)).html(content);
-            
+            $("#dest"+(weatherCount - 1)+" .weather #day"+(j+1)).html(content);
+
         }
-        
+
         weatherCount++;
-    }    
+    }
 }
 
 function getWeather(a,b)
