@@ -33,7 +33,11 @@ var config = {
       dest8_clicks = snap.val().dest8.clicks;
       dest9_clicks = snap.val().dest9.clicks;
   });
-
+//   // could change to the following instead, those 10 vars on top can also be replaced with var clicksArray
+    //   var clicksArray = [0,0,0,0,0,0,0,0,0,0];
+    //   for (var i in clicksArray){
+    //       clicksArray[i] = snap.val()["dest"+i].clicks;
+    //   }
 
   //on page loads, add number of clicks to the destinationss object
   travel_packages.once('value').then(function(snap) {
@@ -296,39 +300,20 @@ var config = {
         }
 
         jQuery.when(currencyResponse,rateResponse).done(fillCurrencyInfo);
-
-            //code for populating currency data
-            // var currencyList = currencyResponse.responseJSON.currencies;
-            // console.log("currencyList:");
-            // console.log(currencyList);
-
-            // var rateList = rateResponse.responseJSON.quotes;
-            // console.log("rateList:");
-            // console.log(rateList);
-
-            // var currencyDiv, currencyText, countryCode;
-            // for (var i in destinations){
-            //     currencyDiv = "#dest"+i+" .currency";
-            //     countryCode = destinations[i].currencyCode;
-            //     destinations[i].currencyName = currencyList[countryCode];
-            //     destinations[i].exchangeRate = rateList["USD"+countryCode]
-            //     currencyText = "US Dollar to "+destinations[i].currencyName+" : 1 to "+destinations[i].exchangeRate;
-            //     $(currencyDiv).text(currencyText);
-            // }
-            //end of code for populating currency data
-
-
-
-
-        $("#sortPopular").on("click",function(){
-            var sortedDestinations = [];
+        
+        // function to sort divs with button press
+        $("#buttonDiv button").on("click",function(){
+            var buttonID = $(this).attr("id");
+            
             destinations.sort(function(a,b){
-                if (a.clicks < b.clicks)
-                  return -1;
-                if (a.clicks > b.clicks)
-                  return 1;
-                return 0;
-                });
+                if (buttonID == "sortPopular"){
+                    return b.clicks - a.clicks;
+                } else if (buttonID == "sortPrice") {
+                    return a.flightInfo.currentPrice - b.flightInfo.currentPrice;
+                } else {
+                    return a.flightInfo.duration - b.flightInfo.duration;
+                }
+            })    
             console.log("sortedDestinations");
             console.log(destinations);
             fillCityName();
