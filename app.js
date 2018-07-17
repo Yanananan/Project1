@@ -67,13 +67,12 @@ var config = {
 
     var destinations = [
         {city: "Bridgetown",
-            country: "Barbados",
-            currencyCode: "BBD",
+            country: "Barbados", 
+            currencyCode: "BBD", 
             clicks: 11,
             currentPrice: 870,
             duration: 3,
             flightInfo: {
-                
                 jul1: "870", jul2: "870", jul3: "870", jul4: "870",
                 aug1: "661", aug2: "661", aug3: "638", aug4: "638",
                 sep1: "605", sep2: "605", sep3: "605", sep4: "605",
@@ -86,16 +85,17 @@ var config = {
                 apr1: "850", apr2: "617", apr3: "532", apr4: "565",
                 may1: "673", may2: "673", may3: "673", may4: "673",
                 jun1: "702", jun2: "774", jun3:"1008", jun4:"1008",
-            },
-            stufftodo: "asldkfjsl"},
+            }, 
+            stufftodo: ["Carlisle Bay", "Parliament Buildings", "St. Michael's Cathedral", "National Heroes Square", "Barbados Garrison"],
+            backgoundImgCopyright: "Business Barbados",          
+        },
         {city: "Zurich",
-            country: "Switzerland",
-            currencyCode: "CHF",
+            country: "Switzerland", 
+            currencyCode: "CHF", 
             clicks: 2,
             currentPrice: 820,
             duration: 5,
             flightInfo: {
-                
                 aug1: "820", aug2:"1264", aug3:"1150", aug4: "565",
                 sep1:"1765", sep2:"1765", sep3:"1100", sep4:"1100",
                 oct1: "976", oct2: "573", oct3: "756", oct4: "756",
@@ -108,16 +108,17 @@ var config = {
                 may1: "706", may2: "706", may3: "706", may4: "706",
                 jun1:"1108", jun2:"1108", jun3:"1108", jun4:"1108",
                 jul1:"1521", jul2:"1521", jul3:"1648", jul4:"1648",
-            },
-            stufftodo: "asldkfjsl"},
+            }, 
+            stufftodo: ["Old Town", "Lake Zurich", "Kunsthaus Zurich", "Bahnhofstrasse","Fraumunster"],
+            backgoundImgCopyright: "sbbmch.cl"
+        },
         {city: "Havana",
-            country: "Cuba",
-            currencyCode: "CUP",
+            country: "Cuba", 
+            currencyCode: "CUP", 
             clicks: 3,
             currentPrice: 542,
             duration: 7,
             flightInfo: {
-            
                 jul1: "542", jul2: "542", jul3: "542", jul4: "542",
                 aug1: "378", aug2: "378", aug3: "378", aug4: "378",
                 sep1: "369", sep2: "369", sep3: "369", sep4: "369",
@@ -130,38 +131,17 @@ var config = {
                 apr1: "437", apr2: "437", apr3: "437", apr4: "437",
                 may1: "403", may2: "403", may3: "403", may4: "403",
                 jun1: "481", jun2: "481", jun3: "481", jun4: "481",
-            },
-            stufftodo: "asldkfjsl"},
+            }, 
+            stufftodo: ["Habana Vieja", "Castillo de los Tres Reyes del Morro", "Fortaleza de San Carlos de la Cubana", "El Capitolio", "Paseo del Prado"],
+            backgoundImgCopyright: "Ross Garden Tours"
+        },
         {city: "Tokyo",
-            country: "Japan",
-            currencyCode: "JPY",
+            country: "Japan", 
+            currencyCode: "JPY", 
             clicks: 4,
             currentPrice: 836,
-            duration: 9,
-            flightInfo: {
-                
-                jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
-                aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
-                sep1: "404", sep2: "396", sep3: "497", sep4: "606",
-                oct1: "790", oct2: "804", oct3: "595", oct4: "495",
-                nov1: "508", nov2: "887", nov3: "571", nov4: "571",
-                dec1: "624", dec2: "564", dec3: "579", dec4:"1124",
-                jan1:"1049", jan2: "684", jan3: "754", jan4: "533",
-                feb1: "754", feb2: "754", feb3: "754", feb4: "754",
-                mar1: "533", mar2: "533", mar3: "893", mar4: "759",
-                apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
-                may1: "487", may2: "527", may3: "646", may4: "646",
-                jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            },
-            stufftodo: "asldkfjsl"},
-        {city: "Johannesburg",
-            country: "South Africa",
-            currencyCode: "ZAR",
-            clicks: 5,
-            currentPrice: 836,
             duration: 8,
-            flightInfo: {//copied from japan
-                
+            flightInfo: {
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
@@ -174,16 +154,38 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            },
-            stufftodo: "asldkfjsl"},
+            }, 
+            stufftodo: ["The Imperial Palace", "Ginza District", "Asakusa and the Senso-ji Temple", "The Meiji Shrine", "The Tokyo Skytree"],
+            backgoundImgCopyright: "wallsauce.com"
+        },
+        {city: "Johannesburg",
+            country: "South Africa", 
+            currencyCode: "ZAR", 
+            clicks: 5,
+            flightInfo: {//copied from japan
+                jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
+                aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
+                sep1: "404", sep2: "396", sep3: "497", sep4: "606",
+                oct1: "790", oct2: "804", oct3: "595", oct4: "495",
+                nov1: "508", nov2: "887", nov3: "571", nov4: "571",
+                dec1: "624", dec2: "564", dec3: "579", dec4:"1124",
+                jan1:"1049", jan2: "684", jan3: "754", jan4: "533",
+                feb1: "754", feb2: "754", feb3: "754", feb4: "754",
+                mar1: "533", mar2: "533", mar3: "893", mar4: "759",
+                apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
+                may1: "487", may2: "527", may3: "646", may4: "646",
+                jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
+            }, 
+            stufftodo: ["The Apartheid Museum", "Constitution Hill", "The Maboneng Precinct", "The Lindfield Victorian House Museum", "Market Theatre"],
+            backgoundImgCopyright: "Andre Roberge (trekearth)"
+        },
         {city: "Manila",
-            country: "Philippines",
-            currencyCode: "PHP",
+            country: "Philippines", 
+            currencyCode: "PHP", 
             clicks: 6,
             currentPrice: 836,
-            duration: 8,
+            duration: 9,
             flightInfo: {//copied from japan
-                
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
@@ -196,16 +198,17 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            },
-            stufftodo: "asldkfjsl"},
+            }, 
+            stufftodo: ["Rizal Park", "Quiapo Church", "San Agustin Church and Museum", "Fort Santiago", "Divisoria Market"],
+            backgoundImgCopyright: "wikipedia"
+        },
         {city: "Seoul",
-            country: "South Korea",
-            currencyCode: "KRW",
+            country: "South Korea", 
+            currencyCode: "KRW", 
             clicks: 7,
             currentPrice: 836,
             duration: 8,
             flightInfo: {//copied from japan
-                
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
@@ -218,16 +221,17 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            },
-            stufftodo: "asldkfjsl"},
+            }, 
+            stufftodo: ["Gyeongbokgung", "Changdeokgung", "War Memorial of Korea", "Noryangjin Fish Market", "Namdaemun Market"],
+            backgoundImgCopyright: "BBC.com"
+        },
         {city: "Sydney",
-            country: "Australia",
-            currencyCode: "AUD",
+            country: "Australia", 
+            currencyCode: "AUD", 
             clicks: 8,
             currentPrice: 836,
             duration: 8,
             flightInfo: {//copied from japan
-                
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
@@ -240,16 +244,17 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            },
-            stufftodo: "asldkfjsl"},
+            }, 
+            stufftodo: ["Sydney Opera House", "The Rocks", "Queen Victoria Building", "Barangaroo Reserve", "George Street"],
+            backgoundImgCopyright: "parkregiscitycentre.com.au"
+        },
         {city: "Vancouver",
-            country: "Canada",
-            currencyCode: "CAD",
+            country: "Canada", 
+            currencyCode: "CAD", 
             clicks: 9,
             currentPrice: 836,
             duration: 8,
             flightInfo: {//copied from japan
-                
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
@@ -262,16 +267,17 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            },
-            stufftodo: "asldkfjsl"},
+            }, 
+            stufftodo: ["Granville Island", "Gastown", "Chinatown", "Stanley Park", "Museum of Vancouver"],
+            backgoundImgCopyright: "vancouver.ca"
+        },
         {city: "Reykjavik",
-            country: "Iceland",
-            currencyCode: "ISK",
+            country: "Iceland", 
+            currencyCode: "ISK", 
             clicks: 10,
             currentPrice: 836,
             duration: 1,
             flightInfo: {//copied from japan
-                
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
@@ -284,9 +290,12 @@ var config = {
                 apr1: "579", apr2:"3692", apr3: "512", apr4: "512",
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
-            },
-            stufftodo: "asldkfjsl"}
+            }, 
+            stufftodo: ["Hallgrimskirkja Church", "Blue Lagoon", "Videy Island", "The Settlement Exhibition", "Whale Watching"],
+            backgoundImgCopyright: "grayline.is"
+        }
         ]
+    
 
         function fillCityName(){
             var cityDiv, cityText, countryCode;
@@ -295,6 +304,7 @@ var config = {
                 countryCode = destinations[i].currencyCode;
                 cityText = destinations[i]["city"]+", "+destinations[i]["country"];
                 $(cityDiv).text(cityText);
+                thingsToDo(i);
             }
         }
         fillCityName();
@@ -433,3 +443,30 @@ function getWeather(a,b)
     })
 
 }
+
+//code to Populate things to do in appropriate boxes
+function thingsToDo(index)
+{
+    var newli, newul;
+    newul = $("<ul>");
+    for(var j = 0; j < destinations[index].stufftodo.length; j++)
+    {
+        newli = $("<li>").html(destinations[index].stufftodo[j]);
+        newul.append(newli);
+    }
+    $("#dest"+index+" .places").append(newul);
+}
+
+//document hover
+$(document).on("mouseenter",".box",function()
+{
+    //alert("hovered");
+    $(this).css("width","800px");
+    $(this).children("div").css("display","block");
+})
+$(document).on("mouseleave",".box",function()
+{
+    //alert("hovered");
+    $(this).css("width","200px");
+    $(this).children("div").css("display","none");
+})
