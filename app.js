@@ -71,6 +71,8 @@ var config = {
             currencyCode: "BBD",
             clicks: 11,
             flightInfo: {
+                currentPrice: 870,
+                duration: 3,
                 jul1: "870", jul2: "870", jul3: "870", jul4: "870",
                 aug1: "661", aug2: "661", aug3: "638", aug4: "638",
                 sep1: "605", sep2: "605", sep3: "605", sep4: "605",
@@ -90,6 +92,8 @@ var config = {
             currencyCode: "CHF",
             clicks: 2,
             flightInfo: {
+                currentPrice: 820,
+                duration: 5,
                 aug1: "820", aug2:"1264", aug3:"1150", aug4: "565",
                 sep1:"1765", sep2:"1765", sep3:"1100", sep4:"1100",
                 oct1: "976", oct2: "573", oct3: "756", oct4: "756",
@@ -109,6 +113,8 @@ var config = {
             currencyCode: "CUP",
             clicks: 3,
             flightInfo: {
+                currentPrice: 542,
+                duration: 7,
                 jul1: "542", jul2: "542", jul3: "542", jul4: "542",
                 aug1: "378", aug2: "378", aug3: "378", aug4: "378",
                 sep1: "369", sep2: "369", sep3: "369", sep4: "369",
@@ -128,6 +134,8 @@ var config = {
             currencyCode: "JPY",
             clicks: 4,
             flightInfo: {
+                currentPrice: 836,
+                duration: 9,
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
@@ -147,6 +155,8 @@ var config = {
             currencyCode: "ZAR",
             clicks: 5,
             flightInfo: {//copied from japan
+                currentPrice: 836,
+                duration: 8,
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
@@ -166,6 +176,8 @@ var config = {
             currencyCode: "PHP",
             clicks: 6,
             flightInfo: {//copied from japan
+                currentPrice: 836,
+                duration: 8,
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
@@ -185,6 +197,8 @@ var config = {
             currencyCode: "KRW",
             clicks: 7,
             flightInfo: {//copied from japan
+                currentPrice: 836,
+                duration: 8,
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
@@ -204,6 +218,8 @@ var config = {
             currencyCode: "AUD",
             clicks: 8,
             flightInfo: {//copied from japan
+                currentPrice: 836,
+                duration: 8,
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
@@ -223,6 +239,8 @@ var config = {
             currencyCode: "CAD",
             clicks: 9,
             flightInfo: {//copied from japan
+                currentPrice: 836,
+                duration: 8,
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
@@ -242,6 +260,8 @@ var config = {
             currencyCode: "ISK",
             clicks: 10,
             flightInfo: {//copied from japan
+                currentPrice: 836,
+                duration: 1,
                 jul1: "836", jul2: "723", jul3:"1000", jul4:"1000",
                 aug1:"1138", aug2: "815", aug3: "696", aug4: "485",
                 sep1: "404", sep2: "396", sep3: "497", sep4: "606",
