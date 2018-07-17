@@ -461,312 +461,397 @@ function fillCurrencyInfo() {
   }
 }
 
-  $('.box').on('click', function() {
-      var numOfClicks = [dest0_clicks, dest1_clicks,dest2_clicks, dest3_clicks, dest4_clicks, dest5_clicks, dest6_clicks, dest7_clicks, dest8_clicks, dest9_clicks];
+$('.box').on('click', function() {
+  var numOfClicks = [
+    dest0_clicks,
+    dest1_clicks,
+    dest2_clicks,
+    dest3_clicks,
+    dest4_clicks,
+    dest5_clicks,
+    dest6_clicks,
+    dest7_clicks,
+    dest8_clicks,
+    dest9_clicks
+  ];
 
-      travelID = $(this).attr('id');
-      var lastChar = travelID.substr(4);
-      numOfClicks[lastChar]++;
-      database.ref(`travel_packages/${travelID}`).set({
-        clicks: numOfClicks[lastChar]
-      });
-    });
+  travelID = $(this).attr('id');
+  var lastChar = travelID.substr(4);
+  numOfClicks[lastChar]++;
+  database.ref(`travel_packages/${travelID}`).set({
+    clicks: numOfClicks[lastChar]
+  });
+});
 
-    var destinations = [
-        {city: "Bridgetown",
-            country: "Barbados",
-            currencyCode: "BBD",
-            clicks: 11,
-            currentPrice: 870,
-            duration: 3,
-            ticketPrice: [
-                [616, 616, 463, 463],
-                [634, 930, 643, 557],
-                [548, 702, 471, 471],
-                [850, 617, 532, 565],
-                [673, 673, 673, 673],
-                [702, 774, 1008, 1008],
-                [870, 870, 870, 870],
-                [661, 661, 638, 638],
-                [605, 605, 605, 605],
-                [529, 529, 567, 567],
-                [601, 601, 623, 623],
-                [801, 801, 801, 801]
-              ],
-            stufftodo: ["Carlisle Bay", "Parliament Buildings", "St. Michael's Cathedral", "National Heroes Square", "Barbados Garrison"],
-            backgoundImgCopyright: "Business Barbados",
-        },
-        {city: "Zurich",
-            country: "Switzerland",
-            currencyCode: "CHF",
-            clicks: 2,
-            currentPrice: 820,
-            duration: 5,
-            ticketPrice: [
-                [616, 616, 463, 463],
-                [634, 930, 643, 557],
-                [548, 702, 471, 471],
-                [850, 617, 532, 565],
-                [673, 673, 673, 673],
-                [702, 774, 1008, 1008],
-                [870, 870, 870, 870],
-                [661, 661, 638, 638],
-                [605, 605, 605, 605],
-                [529, 529, 567, 567],
-                [601, 601, 623, 623],
-                [801, 801, 801, 801]
-              ],
-            stufftodo: ["Old Town", "Lake Zurich", "Kunsthaus Zurich", "Bahnhofstrasse","Fraumunster"],
-            backgoundImgCopyright: "sbbmch.cl"
-        },
-        {city: "Havana",
-            country: "Cuba",
-            currencyCode: "CUP",
-            clicks: 3,
-            currentPrice: 542,
-            duration: 7,
-            ticketPrice: [
-                [616, 616, 463, 463],
-                [634, 930, 643, 557],
-                [548, 702, 471, 471],
-                [850, 617, 532, 565],
-                [673, 673, 673, 673],
-                [702, 774, 1008, 1008],
-                [870, 870, 870, 870],
-                [661, 661, 638, 638],
-                [605, 605, 605, 605],
-                [529, 529, 567, 567],
-                [601, 601, 623, 623],
-                [801, 801, 801, 801]
-              ],
-            stufftodo: ["Habana Vieja", "Castillo de los Tres Reyes del Morro", "Fortaleza de San Carlos de la Cubana", "El Capitolio", "Paseo del Prado"],
-            backgoundImgCopyright: "Ross Garden Tours"
-        },
-        {city: "Tokyo",
-            country: "Japan",
-            currencyCode: "JPY",
-            clicks: 4,
-            currentPrice: 836,
-            duration: 8,
-            ticketPrice: [
-                [616, 616, 463, 463],
-                [634, 930, 643, 557],
-                [548, 702, 471, 471],
-                [850, 617, 532, 565],
-                [673, 673, 673, 673],
-                [702, 774, 1008, 1008],
-                [870, 870, 870, 870],
-                [661, 661, 638, 638],
-                [605, 605, 605, 605],
-                [529, 529, 567, 567],
-                [601, 601, 623, 623],
-                [801, 801, 801, 801]
-              ],
-            stufftodo: ["The Imperial Palace", "Ginza District", "Asakusa and the Senso-ji Temple", "The Meiji Shrine", "The Tokyo Skytree"],
-            backgoundImgCopyright: "wallsauce.com"
-        },
-        {city: "Johannesburg",
-            country: "South Africa",
-            currencyCode: "ZAR",
-            clicks: 5,
-            ticketPrice: [
-                [616, 616, 463, 463],
-                [634, 930, 643, 557],
-                [548, 702, 471, 471],
-                [850, 617, 532, 565],
-                [673, 673, 673, 673],
-                [702, 774, 1008, 1008],
-                [870, 870, 870, 870],
-                [661, 661, 638, 638],
-                [605, 605, 605, 605],
-                [529, 529, 567, 567],
-                [601, 601, 623, 623],
-                [801, 801, 801, 801]
-              ],
-            stufftodo: ["The Apartheid Museum", "Constitution Hill", "The Maboneng Precinct", "The Lindfield Victorian House Museum", "Market Theatre"],
-            backgoundImgCopyright: "Andre Roberge (trekearth)"
-        },
-        {city: "Manila",
-            country: "Philippines",
-            currencyCode: "PHP",
-            clicks: 6,
-            currentPrice: 836,
-            duration: 9,
-            ticketPrice: [
-                [616, 616, 463, 463],
-                [634, 930, 643, 557],
-                [548, 702, 471, 471],
-                [850, 617, 532, 565],
-                [673, 673, 673, 673],
-                [702, 774, 1008, 1008],
-                [870, 870, 870, 870],
-                [661, 661, 638, 638],
-                [605, 605, 605, 605],
-                [529, 529, 567, 567],
-                [601, 601, 623, 623],
-                [801, 801, 801, 801]
-              ],
-            stufftodo: ["Rizal Park", "Quiapo Church", "San Agustin Church and Museum", "Fort Santiago", "Divisoria Market"],
-            backgoundImgCopyright: "wikipedia"
-        },
-        {city: "Seoul",
-            country: "South Korea",
-            currencyCode: "KRW",
-            clicks: 7,
-            currentPrice: 836,
-            duration: 8,
-            ticketPrice: [
-                [616, 616, 463, 463],
-                [634, 930, 643, 557],
-                [548, 702, 471, 471],
-                [850, 617, 532, 565],
-                [673, 673, 673, 673],
-                [702, 774, 1008, 1008],
-                [870, 870, 870, 870],
-                [661, 661, 638, 638],
-                [605, 605, 605, 605],
-                [529, 529, 567, 567],
-                [601, 601, 623, 623],
-                [801, 801, 801, 801]
-              ],
-            stufftodo: ["Gyeongbokgung", "Changdeokgung", "War Memorial of Korea", "Noryangjin Fish Market", "Namdaemun Market"],
-            backgoundImgCopyright: "BBC.com"
-        },
-        {city: "Sydney",
-            country: "Australia",
-            currencyCode: "AUD",
-            clicks: 8,
-            currentPrice: 836,
-            duration: 8,
-            ticketPrice: [
-                [616, 616, 463, 463],
-                [634, 930, 643, 557],
-                [548, 702, 471, 471],
-                [850, 617, 532, 565],
-                [673, 673, 673, 673],
-                [702, 774, 1008, 1008],
-                [870, 870, 870, 870],
-                [661, 661, 638, 638],
-                [605, 605, 605, 605],
-                [529, 529, 567, 567],
-                [601, 601, 623, 623],
-                [801, 801, 801, 801]
-              ],
-            stufftodo: ["Sydney Opera House", "The Rocks", "Queen Victoria Building", "Barangaroo Reserve", "George Street"],
-            backgoundImgCopyright: "parkregiscitycentre.com.au"
-        },
-        {city: "Vancouver",
-            country: "Canada",
-            currencyCode: "CAD",
-            clicks: 9,
-            currentPrice: 836,
-            duration: 8,
-            ticketPrice: [
-                [616, 616, 463, 463],
-                [634, 930, 643, 557],
-                [548, 702, 471, 471],
-                [850, 617, 532, 565],
-                [673, 673, 673, 673],
-                [702, 774, 1008, 1008],
-                [870, 870, 870, 870],
-                [661, 661, 638, 638],
-                [605, 605, 605, 605],
-                [529, 529, 567, 567],
-                [601, 601, 623, 623],
-                [801, 801, 801, 801]
-              ],
-            stufftodo: ["Granville Island", "Gastown", "Chinatown", "Stanley Park", "Museum of Vancouver"],
-            backgoundImgCopyright: "vancouver.ca"
-        },
-        {city: "Reykjavik",
-            country: "Iceland",
-            currencyCode: "ISK",
-            clicks: 10,
-            currentPrice: 836,
-            duration: 1,
-            ticketPrice: [
-                [616, 616, 463, 463],
-                [634, 930, 643, 557],
-                [548, 702, 471, 471],
-                [850, 617, 532, 565],
-                [673, 673, 673, 673],
-                [702, 774, 1008, 1008],
-                [870, 870, 870, 870],
-                [661, 661, 638, 638],
-                [605, 605, 605, 605],
-                [529, 529, 567, 567],
-                [601, 601, 623, 623],
-                [801, 801, 801, 801]
-              ],
-            stufftodo: ["Hallgrimskirkja Church", "Blue Lagoon", "Videy Island", "The Settlement Exhibition", "Whale Watching"],
-            backgoundImgCopyright: "grayline.is"
-        }
-        ]
+var destinations = [
+  {
+    city: 'Bridgetown',
+    country: 'Barbados',
+    currencyCode: 'BBD',
+    clicks: 11,
+    currentPrice: 870,
+    duration: 3,
+    ticketPrice: [
+      [616, 616, 463, 463],
+      [634, 930, 643, 557],
+      [548, 702, 471, 471],
+      [850, 617, 532, 565],
+      [673, 673, 673, 673],
+      [702, 774, 1008, 1008],
+      [870, 870, 870, 870],
+      [661, 661, 638, 638],
+      [605, 605, 605, 605],
+      [529, 529, 567, 567],
+      [601, 601, 623, 623],
+      [801, 801, 801, 801]
+    ],
+    stufftodo: [
+      'Carlisle Bay',
+      'Parliament Buildings',
+      "St. Michael's Cathedral",
+      'National Heroes Square',
+      'Barbados Garrison'
+    ],
+    backgoundImgCopyright: 'Business Barbados'
+  },
+  {
+    city: 'Zurich',
+    country: 'Switzerland',
+    currencyCode: 'CHF',
+    clicks: 2,
+    currentPrice: 820,
+    duration: 5,
+    ticketPrice: [
+      [616, 616, 463, 463],
+      [634, 930, 643, 557],
+      [548, 702, 471, 471],
+      [850, 617, 532, 565],
+      [673, 673, 673, 673],
+      [702, 774, 1008, 1008],
+      [870, 870, 870, 870],
+      [661, 661, 638, 638],
+      [605, 605, 605, 605],
+      [529, 529, 567, 567],
+      [601, 601, 623, 623],
+      [801, 801, 801, 801]
+    ],
+    stufftodo: [
+      'Old Town',
+      'Lake Zurich',
+      'Kunsthaus Zurich',
+      'Bahnhofstrasse',
+      'Fraumunster'
+    ],
+    backgoundImgCopyright: 'sbbmch.cl'
+  },
+  {
+    city: 'Havana',
+    country: 'Cuba',
+    currencyCode: 'CUP',
+    clicks: 3,
+    currentPrice: 542,
+    duration: 7,
+    ticketPrice: [
+      [616, 616, 463, 463],
+      [634, 930, 643, 557],
+      [548, 702, 471, 471],
+      [850, 617, 532, 565],
+      [673, 673, 673, 673],
+      [702, 774, 1008, 1008],
+      [870, 870, 870, 870],
+      [661, 661, 638, 638],
+      [605, 605, 605, 605],
+      [529, 529, 567, 567],
+      [601, 601, 623, 623],
+      [801, 801, 801, 801]
+    ],
+    stufftodo: [
+      'Habana Vieja',
+      'Castillo de los Tres Reyes del Morro',
+      'Fortaleza de San Carlos de la Cubana',
+      'El Capitolio',
+      'Paseo del Prado'
+    ],
+    backgoundImgCopyright: 'Ross Garden Tours'
+  },
+  {
+    city: 'Tokyo',
+    country: 'Japan',
+    currencyCode: 'JPY',
+    clicks: 4,
+    currentPrice: 836,
+    duration: 8,
+    ticketPrice: [
+      [616, 616, 463, 463],
+      [634, 930, 643, 557],
+      [548, 702, 471, 471],
+      [850, 617, 532, 565],
+      [673, 673, 673, 673],
+      [702, 774, 1008, 1008],
+      [870, 870, 870, 870],
+      [661, 661, 638, 638],
+      [605, 605, 605, 605],
+      [529, 529, 567, 567],
+      [601, 601, 623, 623],
+      [801, 801, 801, 801]
+    ],
+    stufftodo: [
+      'The Imperial Palace',
+      'Ginza District',
+      'Asakusa and the Senso-ji Temple',
+      'The Meiji Shrine',
+      'The Tokyo Skytree'
+    ],
+    backgoundImgCopyright: 'wallsauce.com'
+  },
+  {
+    city: 'Johannesburg',
+    country: 'South Africa',
+    currencyCode: 'ZAR',
+    clicks: 5,
+    ticketPrice: [
+      [616, 616, 463, 463],
+      [634, 930, 643, 557],
+      [548, 702, 471, 471],
+      [850, 617, 532, 565],
+      [673, 673, 673, 673],
+      [702, 774, 1008, 1008],
+      [870, 870, 870, 870],
+      [661, 661, 638, 638],
+      [605, 605, 605, 605],
+      [529, 529, 567, 567],
+      [601, 601, 623, 623],
+      [801, 801, 801, 801]
+    ],
+    stufftodo: [
+      'The Apartheid Museum',
+      'Constitution Hill',
+      'The Maboneng Precinct',
+      'The Lindfield Victorian House Museum',
+      'Market Theatre'
+    ],
+    backgoundImgCopyright: 'Andre Roberge (trekearth)'
+  },
+  {
+    city: 'Manila',
+    country: 'Philippines',
+    currencyCode: 'PHP',
+    clicks: 6,
+    currentPrice: 836,
+    duration: 9,
+    ticketPrice: [
+      [616, 616, 463, 463],
+      [634, 930, 643, 557],
+      [548, 702, 471, 471],
+      [850, 617, 532, 565],
+      [673, 673, 673, 673],
+      [702, 774, 1008, 1008],
+      [870, 870, 870, 870],
+      [661, 661, 638, 638],
+      [605, 605, 605, 605],
+      [529, 529, 567, 567],
+      [601, 601, 623, 623],
+      [801, 801, 801, 801]
+    ],
+    stufftodo: [
+      'Rizal Park',
+      'Quiapo Church',
+      'San Agustin Church and Museum',
+      'Fort Santiago',
+      'Divisoria Market'
+    ],
+    backgoundImgCopyright: 'wikipedia'
+  },
+  {
+    city: 'Seoul',
+    country: 'South Korea',
+    currencyCode: 'KRW',
+    clicks: 7,
+    currentPrice: 836,
+    duration: 8,
+    ticketPrice: [
+      [616, 616, 463, 463],
+      [634, 930, 643, 557],
+      [548, 702, 471, 471],
+      [850, 617, 532, 565],
+      [673, 673, 673, 673],
+      [702, 774, 1008, 1008],
+      [870, 870, 870, 870],
+      [661, 661, 638, 638],
+      [605, 605, 605, 605],
+      [529, 529, 567, 567],
+      [601, 601, 623, 623],
+      [801, 801, 801, 801]
+    ],
+    stufftodo: [
+      'Gyeongbokgung',
+      'Changdeokgung',
+      'War Memorial of Korea',
+      'Noryangjin Fish Market',
+      'Namdaemun Market'
+    ],
+    backgoundImgCopyright: 'BBC.com'
+  },
+  {
+    city: 'Sydney',
+    country: 'Australia',
+    currencyCode: 'AUD',
+    clicks: 8,
+    currentPrice: 836,
+    duration: 8,
+    ticketPrice: [
+      [616, 616, 463, 463],
+      [634, 930, 643, 557],
+      [548, 702, 471, 471],
+      [850, 617, 532, 565],
+      [673, 673, 673, 673],
+      [702, 774, 1008, 1008],
+      [870, 870, 870, 870],
+      [661, 661, 638, 638],
+      [605, 605, 605, 605],
+      [529, 529, 567, 567],
+      [601, 601, 623, 623],
+      [801, 801, 801, 801]
+    ],
+    stufftodo: [
+      'Sydney Opera House',
+      'The Rocks',
+      'Queen Victoria Building',
+      'Barangaroo Reserve',
+      'George Street'
+    ],
+    backgoundImgCopyright: 'parkregiscitycentre.com.au'
+  },
+  {
+    city: 'Vancouver',
+    country: 'Canada',
+    currencyCode: 'CAD',
+    clicks: 9,
+    currentPrice: 836,
+    duration: 8,
+    ticketPrice: [
+      [616, 616, 463, 463],
+      [634, 930, 643, 557],
+      [548, 702, 471, 471],
+      [850, 617, 532, 565],
+      [673, 673, 673, 673],
+      [702, 774, 1008, 1008],
+      [870, 870, 870, 870],
+      [661, 661, 638, 638],
+      [605, 605, 605, 605],
+      [529, 529, 567, 567],
+      [601, 601, 623, 623],
+      [801, 801, 801, 801]
+    ],
+    stufftodo: [
+      'Granville Island',
+      'Gastown',
+      'Chinatown',
+      'Stanley Park',
+      'Museum of Vancouver'
+    ],
+    backgoundImgCopyright: 'vancouver.ca'
+  },
+  {
+    city: 'Reykjavik',
+    country: 'Iceland',
+    currencyCode: 'ISK',
+    clicks: 10,
+    currentPrice: 836,
+    duration: 1,
+    ticketPrice: [
+      [616, 616, 463, 463],
+      [634, 930, 643, 557],
+      [548, 702, 471, 471],
+      [850, 617, 532, 565],
+      [673, 673, 673, 673],
+      [702, 774, 1008, 1008],
+      [870, 870, 870, 870],
+      [661, 661, 638, 638],
+      [605, 605, 605, 605],
+      [529, 529, 567, 567],
+      [601, 601, 623, 623],
+      [801, 801, 801, 801]
+    ],
+    stufftodo: [
+      'Hallgrimskirkja Church',
+      'Blue Lagoon',
+      'Videy Island',
+      'The Settlement Exhibition',
+      'Whale Watching'
+    ],
+    backgoundImgCopyright: 'grayline.is'
+  }
+];
 
+function fillCityName() {
+  var cityDiv, cityText, countryCode;
+  for (var i in destinations) {
+    cityDiv = '#dest' + i + ' .name';
+    countryCode = destinations[i].currencyCode;
+    cityText = destinations[i]['city'] + ', ' + destinations[i]['country'];
+    $(cityDiv).text(cityText);
+    thingsToDo(i);
+  }
+}
+fillCityName();
 
-        function fillCityName(){
-            var cityDiv, cityText, countryCode;
-            for (var i in destinations){
-                cityDiv = "#dest"+i+" .name";
-                countryCode = destinations[i].currencyCode;
-                cityText = destinations[i]["city"]+", "+destinations[i]["country"];
-                $(cityDiv).text(cityText);
-                thingsToDo(i);
-            }
-        }
-        fillCityName();
+var currencyURL =
+  'http://apilayer.net/api/list?access_key=a7f50bef8b2879efd43630712a46b389';
+var currencyResponse = $.ajax({
+  url: currencyURL
+});
 
-        var currencyURL = "http://apilayer.net/api/list?access_key=a7f50bef8b2879efd43630712a46b389";
-        var currencyResponse = $.ajax({
-            url: currencyURL,
-        });
+var rateURL =
+  'http://www.apilayer.net/api/live?access_key=a7f50bef8b2879efd43630712a46b389';
+var rateResponse = $.ajax({
+  url: rateURL
+});
 
-        var rateURL = "http://www.apilayer.net/api/live?access_key=a7f50bef8b2879efd43630712a46b389";
-        var rateResponse = $.ajax({
-            url: rateURL,
-        });
+function fillCurrencyInfo() {
+  var currencyList = currencyResponse.responseJSON.currencies;
+  console.log('currencyList:');
+  console.log(currencyList);
 
-        function fillCurrencyInfo(){
-            var currencyList = currencyResponse.responseJSON.currencies;
-            console.log("currencyList:");
-            console.log(currencyList);
+  var rateList = rateResponse.responseJSON.quotes;
+  console.log('rateList:');
+  console.log(rateList);
 
-            var rateList = rateResponse.responseJSON.quotes;
-            console.log("rateList:");
-            console.log(rateList);
+  var currencyDiv, currencyText, countryCode;
+  for (var i in destinations) {
+    currencyDiv = '#dest' + i + ' .currency';
+    countryCode = destinations[i].currencyCode;
+    destinations[i].currencyName = currencyList[countryCode];
+    destinations[i].exchangeRate = rateList['USD' + countryCode];
+    currencyText =
+      'US Dollar to ' +
+      destinations[i].currencyName +
+      ' : 1 to ' +
+      destinations[i].exchangeRate;
+    $(currencyDiv).text(currencyText);
+  }
+}
 
-            var currencyDiv, currencyText, countryCode;
-            for (var i in destinations){
-                currencyDiv = "#dest"+i+" .currency";
-                countryCode = destinations[i].currencyCode;
-                destinations[i].currencyName = currencyList[countryCode];
-                destinations[i].exchangeRate = rateList["USD"+countryCode]
-                currencyText = "US Dollar to "+destinations[i].currencyName+" : 1 to "+destinations[i].exchangeRate;
-                $(currencyDiv).text(currencyText);
-            }
-        }
+jQuery.when(currencyResponse, rateResponse).done(fillCurrencyInfo);
 
-        jQuery.when(currencyResponse,rateResponse).done(fillCurrencyInfo);
+// function to sort divs with button press
+$('#buttonDiv button').on('click', function() {
+  var buttonID = $(this).attr('id');
 
-        // function to sort divs with button press
-        $("#buttonDiv button").on("click",function(){
-            var buttonID = $(this).attr("id");
-
-            destinations.sort(function(a,b){
-                if (buttonID == "sortPopular"){
-                    return b.clicks - a.clicks;
-                } else if (buttonID == "sortPrice") {
-                    return a.currentPrice - b.currentPrice;
-                } else {
-                    return a.duration - b.duration;
-                }
-            })
-            console.log("sortedDestinations");
-            console.log(destinations);
-            fillCityName();
-            fillCurrencyInfo();
-        })
-
+  destinations.sort(function(a, b) {
+    if (buttonID == 'sortPopular') {
+      return b.clicks - a.clicks;
+    } else if (buttonID == 'sortPrice') {
+      return a.currentPrice - b.currentPrice;
+    } else {
+      return a.duration - b.duration;
+    }
+  });
+  console.log('sortedDestinations');
+  console.log(destinations);
+  fillCityName();
+  fillCurrencyInfo();
+});
 
 //weather API JS
 var weatherCount = 1;
@@ -880,66 +965,114 @@ function displayPrice() {
   for (var i = 0; i < destinations.length; i++) {
     priceDiv = '#dest' + i + ' .price';
     currentPrice = destinations[i].ticketPrice[currMonthIndex][week];
+    destinations[i].currentPrice = currentPrice;
     $(priceDiv).text(currentPrice);
   }
 }
 
 displayPrice();
 
-function getWeather(a,b)
-{
-    queryURL = "https://api.weatherbit.io/v2.0/forecast/daily?city="+a+"&country="+b+"&key="+weatherAPIKey;
-    console.log(queryURL);
-    $.ajax({url: queryURL}).then(function(response){
-        //var content = "";
-        //debugger;
+function getWeather(a, b) {
+  queryURL =
+    'https://api.weatherbit.io/v2.0/forecast/daily?city=' +
+    a +
+    '&country=' +
+    b +
+    '&key=' +
+    weatherAPIKey;
+  console.log(queryURL);
+  $.ajax({ url: queryURL }).then(function(response) {
+    //var content = "";
+    //debugger;
 
-        for(var i = 0; i < destinations.length; i++)
-        {
-            if(destinations[i].city == a)
-            {
-                destinations[i].weather = response;
-                resCount++;
-            }
-        }
-        if(resCount == 10)
-        {
-            displayWeather();
-        }
+    for (var i = 0; i < destinations.length; i++) {
+      if (destinations[i].city == a) {
+        destinations[i].weather = response;
+        resCount++;
+      }
+    }
+    if (resCount == 10) {
+      displayWeather();
+    }
 
-        // destinations[indexOf(a)].weather = response;   //FIX
-        // resCount++;
-        // if(resCount == 10)
-        // {
-        //     displayWeather();
-        // }
-    })
-
+    // destinations[indexOf(a)].weather = response;   //FIX
+    // resCount++;
+    // if(resCount == 10)
+    // {
+    //     displayWeather();
+    // }
+  });
 }
 
 //code to Populate things to do in appropriate boxes
-function thingsToDo(index)
-{
-    var newli, newul;
-    newul = $("<ul>");
-    for(var j = 0; j < destinations[index].stufftodo.length; j++)
-    {
-        newli = $("<li>").html(destinations[index].stufftodo[j]);
-        newul.append(newli);
-    }
-    $("#dest"+index+" .places").append(newul);
+function thingsToDo(index) {
+  var newli, newul;
+  newul = $('<ul>');
+  for (var j = 0; j < destinations[index].stufftodo.length; j++) {
+    newli = $('<li>').html(destinations[index].stufftodo[j]);
+    newul.append(newli);
+  }
+  $('#dest' + index + ' .places').append(newul);
 }
 
 //document hover
-$(document).on("mouseenter",".box",function()
-{
-    //alert("hovered");
-    $(this).css("width","800px");
-    $(this).children("div").css("display","block");
-})
-$(document).on("mouseleave",".box",function()
-{
-    //alert("hovered");
-    $(this).css("width","200px");
-    $(this).children("div").css("display","none");
-})
+$(document).on('mouseenter', '.box', function() {
+  //alert("hovered");
+  $(this).css('width', '800px');
+  $(this)
+    .children('div')
+    .css('display', 'block');
+});
+$(document).on('mouseleave', '.box', function() {
+  //alert("hovered");
+  $(this).css('width', '200px');
+  $(this)
+    .children('div')
+    .css('display', 'none');
+});
+
+//Stripe integration
+function travelPakage() {
+  for (var i = 0; i < destinations.length; i++) {
+    var priceDiv = $(`#dest${i} .purchase`);
+    var city = destinations[i].city;
+    var duration = destinations[i].duration;
+    var price = destinations[i].currentPrice;
+    priceDiv.attr({
+      'data-city': city,
+      'data-duration': duration,
+      'data-price': price
+    });
+  }
+}
+
+travelPakage();
+
+var handler = StripeCheckout.configure({
+  key: 'pk_test_PAkJqhf7aSDhFhy4yh7qJLsR',
+  image: 'http://logonoid.com/images/yves-saint-laurent-logo.jpg',
+  locale: 'auto',
+  token: function(token) {
+    // You can access the token ID with `token.id`.
+    // Get the token ID to your server-side code for use.
+  }
+});
+
+$('.purchase').on('click', function(e) {
+  var city = $(this).attr('data-city');
+  var duration = $(this).attr('data-duration');
+  var price = $(this).attr('data-price');
+  console.log(city);
+  // Open Checkout with further options:
+  handler.open({
+    name: 'YSL',
+    description: `${city} - ${duration} days`,
+    amount: `${price}00`
+  });
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
