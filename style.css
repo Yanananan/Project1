@@ -1,3 +1,19 @@
+/* Reset all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+  }
+
 .box{
     border: 2px black solid;
     margin: 5px auto;
@@ -8,149 +24,149 @@
 }
 /* .box:hover{
     background-color: gray;
-    
+
 } */
 
 #dest0::after{
     background: url("assets/Bridgetown.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    content: ""; 
+    content: "";
     opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;  
+    z-index: -1;
 }
 #dest1::after{
     background: url("assets/Zurich.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    content: ""; 
+    content: "";
     opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;  
+    z-index: -1;
 }
 #dest2::after{
     background: url("assets/Havana.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    content: ""; 
+    content: "";
     opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;  
+    z-index: -1;
 }
 #dest3::after{
     background: url("assets/Tokyo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    content: ""; 
+    content: "";
     opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;  
+    z-index: -1;
 }
 #dest4::after{
     background: url("assets/Johannesburg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    content: ""; 
+    content: "";
     opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;  
+    z-index: -1;
 }
 #dest5::after{
     background: url("assets/Manila.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    content: ""; 
+    content: "";
     opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;  
+    z-index: -1;
 }
 #dest6::after{
     background: url("assets/Seoul.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    content: ""; 
+    content: "";
     opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;  
+    z-index: -1;
 }
 #dest7::after{
     background: url("assets/Sydney.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    content: ""; 
+    content: "";
     opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;  
+    z-index: -1;
 }
 #dest8::after{
     background: url("assets/Vancouver.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    content: ""; 
+    content: "";
     opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;  
+    z-index: -1;
 }
 #dest9::after{
     background: url("assets/Reykjavik.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    content: ""; 
+    content: "";
     opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;  
+    z-index: -1;
 }
 
 /* .box::after {
-    content: ""; 
+    content: "";
     opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;   
+    z-index: -1;
   } */
 table{
     border-collapse: collapse;
@@ -166,7 +182,7 @@ table, td, th{
 ul{
     list-style-type: none;
 }
-  
+
 .flightInfo, .places, .weather, .currency{
     display: none;
 }
@@ -174,5 +190,5 @@ ul{
 
 }
 .smallFont{
-    
+
 }
