@@ -1,4 +1,5 @@
-
+//THINGS TO DO:
+//Keep track of copyright images
 
 // Initialize Firebase
 var config = {
@@ -86,7 +87,9 @@ var config = {
                 may1: "673", may2: "673", may3: "673", may4: "673",
                 jun1: "702", jun2: "774", jun3:"1008", jun4:"1008",
             }, 
-            stufftodo: "asldkfjsl"},
+            stufftodo: ["Carlisle Bay", "Parliament Buildings", "St. Michael's Cathedral", "National Heroes Square", "Barbados Garrison"],
+            backgoundImgCopyright: "Business Barbados",          
+        },
         {city: "Zurich",
             country: "Switzerland", 
             currencyCode: "CHF", 
@@ -105,7 +108,9 @@ var config = {
                 jun1:"1108", jun2:"1108", jun3:"1108", jun4:"1108",
                 jul1:"1521", jul2:"1521", jul3:"1648", jul4:"1648",
             }, 
-            stufftodo: "asldkfjsl"},
+            stufftodo: ["Old Town", "Lake Zurich", "Kunsthaus Zurich", "Bahnhofstrasse","Fraumunster"],
+            backgoundImgCopyright: "sbbmch.cl"
+        },
         {city: "Havana",
             country: "Cuba", 
             currencyCode: "CUP", 
@@ -124,7 +129,9 @@ var config = {
                 may1: "403", may2: "403", may3: "403", may4: "403",
                 jun1: "481", jun2: "481", jun3: "481", jun4: "481",
             }, 
-            stufftodo: "asldkfjsl"},
+            stufftodo: ["Habana Vieja", "Castillo de los Tres Reyes del Morro", "Fortaleza de San Carlos de la Cubana", "El Capitolio", "Paseo del Prado"],
+            backgoundImgCopyright: "Ross Garden Tours"
+        },
         {city: "Tokyo",
             country: "Japan", 
             currencyCode: "JPY", 
@@ -143,7 +150,9 @@ var config = {
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
             }, 
-            stufftodo: "asldkfjsl"},
+            stufftodo: ["The Imperial Palace", "Ginza District", "Asakusa and the Senso-ji Temple", "The Meiji Shrine", "The Tokyo Skytree"],
+            backgoundImgCopyright: "wallsauce.com"
+        },
         {city: "Johannesburg",
             country: "South Africa", 
             currencyCode: "ZAR", 
@@ -162,9 +171,11 @@ var config = {
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
             }, 
-            stufftodo: "asldkfjsl"},
-        {city: "Manilla",
-            country: "The Philippines", 
+            stufftodo: ["The Apartheid Museum", "Constitution Hill", "The Maboneng Precinct", "The Lindfield Victorian House Museum", "Market Theatre"],
+            backgoundImgCopyright: "Andre Roberge (trekearth)"
+        },
+        {city: "Manila",
+            country: "Philippines", 
             currencyCode: "PHP", 
             clicks: 6,
             flightInfo: {//copied from japan
@@ -181,7 +192,9 @@ var config = {
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
             }, 
-            stufftodo: "asldkfjsl"},
+            stufftodo: ["Rizal Park", "Quiapo Church", "San Agustin Church and Museum", "Fort Santiago", "Divisoria Market"],
+            backgoundImgCopyright: "wikipedia"
+        },
         {city: "Seoul",
             country: "South Korea", 
             currencyCode: "KRW", 
@@ -200,7 +213,9 @@ var config = {
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
             }, 
-            stufftodo: "asldkfjsl"},
+            stufftodo: ["Gyeongbokgung", "Changdeokgung", "War Memorial of Korea", "Noryangjin Fish Market", "Namdaemun Market"],
+            backgoundImgCopyright: "BBC.com"
+        },
         {city: "Sydney",
             country: "Australia", 
             currencyCode: "AUD", 
@@ -219,7 +234,9 @@ var config = {
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
             }, 
-            stufftodo: "asldkfjsl"},
+            stufftodo: ["Sydney Opera House", "The Rocks", "Queen Victoria Building", "Barangaroo Reserve", "George Street"],
+            backgoundImgCopyright: "parkregiscitycentre.com.au"
+        },
         {city: "Vancouver",
             country: "Canada", 
             currencyCode: "CAD", 
@@ -238,7 +255,9 @@ var config = {
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
             }, 
-            stufftodo: "asldkfjsl"},
+            stufftodo: ["Granville Island", "Gastown", "Chinatown", "Stanley Park", "Museum of Vancouver"],
+            backgoundImgCopyright: "vancouver.ca"
+        },
         {city: "Reykjavik",
             country: "Iceland", 
             currencyCode: "ISK", 
@@ -257,7 +276,9 @@ var config = {
                 may1: "487", may2: "527", may3: "646", may4: "646",
                 jun1: "734", jun2:"1030", jun3: "666", jun4: "956",
             }, 
-            stufftodo: "asldkfjsl"}
+            stufftodo: ["Hallgrimskirkja Church", "Blue Lagoon", "Videy Island", "The Settlement Exhibition", "Whale Watching"],
+            backgoundImgCopyright: "grayline.is"
+        }
         ]
 
         function fillCityName(){
@@ -267,6 +288,8 @@ var config = {
                 countryCode = destinations[i].currencyCode;
                 cityText = destinations[i]["city"]+", "+destinations[i]["country"];
                 $(cityDiv).text(cityText);
+                thingsToDo(i);
+
             }
         }
         fillCityName();
@@ -386,7 +409,7 @@ function displayWeather()
             content += "<h6>Precipitation: "+ destinations[i].weather.data[j].pop +"%</h6>";
             content += "<img src = 'https://www.weatherbit.io/static/img/icons/"+ destinations[i].weather.data[j].weather.icon+".png' alt='icon' width='30' height='30'>";
             content += "<br><h6>"+ destinations[i].weather.data[j].weather.description +"</h6>";
-            $("#dest"+weatherCount+" .weather #day"+(j+1)).html(content);
+            $("#dest"+(weatherCount-1)+" .weather #day"+(j+1)).html(content);
             
         }
         
@@ -424,3 +447,35 @@ function getWeather(a,b)
     })
 
 }
+
+
+
+//code to Populate things to do in appropriate boxes
+function thingsToDo(index)
+{
+    var newli, newul;
+    newul = $("<ul>");
+    for(var j = 0; j < destinations[index].stufftodo.length; j++)
+    {
+        newli = $("<li>").html(destinations[index].stufftodo[j]);
+        newul.append(newli);
+    }
+    $("#dest"+index+" .places").append(newul);
+}
+
+//document hover
+$(document).on("mouseenter",".box",function()
+{
+    //alert("hovered");
+    $(this).css("width","800px");
+    // debugger;
+    $(this).children("div").css("display","block");
+    // $(this).css("filter","brightness(50%)");
+})
+$(document).on("mouseleave",".box",function()
+{
+    //alert("hovered");
+    $(this).css("width","800px");
+    $(this).children("div").css("display","none");
+    // $(this).css("filter","brightness(100%)");
+})
