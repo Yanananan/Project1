@@ -2,238 +2,269 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Project #1</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>Project #1</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-  <div id="container">
-    <h1>Site Heading</h1>
-
-      <div class="box" id="dest0">
-        <h3 class="name bigFont">city name</h3>
-        <div class="flightInfo">flight info</div>
-        <div class="places">Places to See</div>
-        <div class="weather">
-            <table>
-                <tr>
-                    <th colspan="7">Weather Forecast</th>
-                </tr>
-                <tr>
-                    <td id="day1"></td>
-                    <td id="day2"></td>
-                    <td id="day3"></td>
-                    <td id="day4"></td>
-                    <td id="day5"></td>
-                    <td id="day6"></td>
-                    <td id="day7"></td>
-                </tr>
-            </table>
-
-
-
-
+    <div id="container">
+        <h1>Site Heading</h1>
+        <div id="buttonDiv">
+            <button id="sortPopular">Sort by Popularity</button>
+            <button id="sortPrice">Sort by Price</button>
+            <button id="sortDuration">Sort by Duration</button>
         </div>
-        <div class="currency">currency exchange rate</div>
-        <button>Purchase</button>
-      </div>
-      <div class="box" id="dest1">
-          <h3 class="name">city name</h3>
-          <div class="flightInfo">flight info</div>
-          <div class="places">Places to See</div>
-          <div class="weather">     
-              <table>
-                <tr>
-                    <th colspan="7">Weather Forecast</th>
-                </tr>
-                <tr>
-                    <td id="day1"></td>
-                    <td id="day2"></td>
-                    <td id="day3"></td>
-                    <td id="day4"></td>
-                    <td id="day5"></td>
-                    <td id="day6"></td>
-                    <td id="day7"></td>
-                </tr>
-            </table></div>
-          <div class="currency">currency exchange rate</div>
-          <button>Purchase</button>
-      </div>
-      <div class="box" id="dest2">
-          <h3 class="name">city name</h3>
-          <div class="flightInfo">flight info</div>
-          <div class="places">Places to See</div>
-          <div class="weather">     <table>
-                <tr>
-                    <th colspan="7">Weather Forecast</th>
-                </tr>
-                <tr>
-                    <td id="day1"></td>
-                    <td id="day2"></td>
-                    <td id="day3"></td>
-                    <td id="day4"></td>
-                    <td id="day5"></td>
-                    <td id="day6"></td>
-                    <td id="day7"></td>
-                </tr>
-            </table></div>
-          <div class="currency">currency exchange rate</div>
-          <button>Purchase</button>
-      </div>
-      <div class="box" id="dest3">
-          <h3 class="name">city name</h3>
-          <div class="flightInfo">flight info</div>
-          <div class="places">Places to See</div>
-          <div class="weather">     <table>
-                <tr>
-                    <th colspan="7">Weather Forecast</th>
-                </tr>
-                <tr>
-                    <td id="day1"></td>
-                    <td id="day2"></td>
-                    <td id="day3"></td>
-                    <td id="day4"></td>
-                    <td id="day5"></td>
-                    <td id="day6"></td>
-                    <td id="day7"></td>
-                </tr>
-            </table></div>
-          <div class="currency">currency exchange rate</div>
-          <button>Purchase</button>
-      </div>
-      <div class="box" id="dest4">
-          <h3 class="name">city name</h3>
-          <div class="flightInfo">flight info</div>
-          <div class="places">Places to See</div>
-          <div class="weather">     <table>
-                <tr>
-                    <th colspan="7">Weather Forecast</th>
-                </tr>
-                <tr>
-                    <td id="day1"></td>
-                    <td id="day2"></td>
-                    <td id="day3"></td>
-                    <td id="day4"></td>
-                    <td id="day5"></td>
-                    <td id="day6"></td>
-                    <td id="day7"></td>
-                </tr>
-            </table></div>
-          <div class="currency">currency exchange rate</div>
-          <button>Purchase</button>
-      </div>
-      <div class="box" id="dest5">
-          <h3 class="name">city name</h3>
-          <div class="flightInfo">flight info</div>
-          <div class="places">Places to See</div>
-          <div class="weather">     <table>
-                <tr>
-                    <th colspan="7">Weather Forecast</th>
-                </tr>
-                <tr>
-                    <td id="day1"></td>
-                    <td id="day2"></td>
-                    <td id="day3"></td>
-                    <td id="day4"></td>
-                    <td id="day5"></td>
-                    <td id="day6"></td>
-                    <td id="day7"></td>
-                </tr>
-            </table></div>
-          <div class="currency">currency exchange rate</div>
-          <button>Purchase</button>
-      </div>
-      <div class="box" id="dest6">
-          <h3 class="name">city name</h3>
-          <div class="flightInfo">flight info</div>
-          <div class="places">Places to See</div>
-          <div class="weather">     <table>
-                <tr>
-                    <th colspan="7">Weather Forecast</th>
-                </tr>
-                <tr>
-                    <td id="day1"></td>
-                    <td id="day2"></td>
-                    <td id="day3"></td>
-                    <td id="day4"></td>
-                    <td id="day5"></td>
-                    <td id="day6"></td>
-                    <td id="day7"></td>
-                </tr>
-            </table></div>
-          <div class="currency">currency exchange rate</div>
-          <button>Purchase</button>
-      </div>
-      <div class="box" id="dest7">
-          <h3 class="name">city name</h3>
-          <div class="flightInfo">flight info</div>
-          <div class="places">Places to See</div>
-          <div class="weather">     <table>
-                <tr>
-                    <th colspan="7">Weather Forecast</th>
-                </tr>
-                <tr>
-                    <td id="day1"></td>
-                    <td id="day2"></td>
-                    <td id="day3"></td>
-                    <td id="day4"></td>
-                    <td id="day5"></td>
-                    <td id="day6"></td>
-                    <td id="day7"></td>
-                </tr>
-            </table></div>
-          <div class="currency">currency exchange rate</div>
-          <button>Purchase</button>
-      </div>
-      <div class="box" id="dest8">
-          <h3 class="name">city name</h3>
-          <div class="flightInfo">flight info</div>
-          <div class="places">Places to See</div>
-          <div class="weather">     <table>
-                <tr>
-                    <th colspan="7">Weather Forecast</th>
-                </tr>
-                <tr>
-                    <td id="day1"></td>
-                    <td id="day2"></td>
-                    <td id="day3"></td>
-                    <td id="day4"></td>
-                    <td id="day5"></td>
-                    <td id="day6"></td>
-                    <td id="day7"></td>
-                </tr>
-            </table></div>
-          <div class="currency">currency exchange rate</div>
-          <button>Purchase</button>
-      </div>
-      <div class="box" id="dest9">
-          <h3 class="name">city name</h3>
-          <div class="flightInfo">flight info</div>
-          <div class="places">Places to See</div>
-          <div class="weather">     <table>
-                <tr>
-                    <th colspan="7">Weather Forecast</th>
-                </tr>
-                <tr>
-                    <td id="day1"></td>
-                    <td id="day2"></td>
-                    <td id="day3"></td>
-                    <td id="day4"></td>
-                    <td id="day5"></td>
-                    <td id="day6"></td>
-                    <td id="day7"></td>
-                </tr>
-            </table></div>
-          <div class="currency">currency exchange rate</div>
-          <button>Purchase</button>
-      </div>
+        <div class="box" id="dest0">
+            <div class="inner">
+            <h3 class="name">city name</h3>
+            <div class="flightInfo">flight info</div>
+            <div class="price"></div>
+            <div class="places">Places to See</div>
+            <div class="weather">
+                <table>
+                    <tr>
+                        <th colspan="7">Weather Forecast</th>
+                    </tr>
+                    <tr>
+                        <td id="day1"></td>
+                        <td id="day2"></td>
+                        <td id="day3"></td>
+                        <td id="day4"></td>
+                        <td id="day5"></td>
+                        <td id="day6"></td>
+                        <td id="day7"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="currency">currency exchange rate</div>
+            <button class='purchase'>Purchase</button>
+        </div>
+        </div>
+        <div class="box" id="dest1">
+            <h3 class="name">city name</h3>
+            <div class="price"></div>
+            <div class="flightInfo">flight info</div>
+            <div class="places">Places to See</div>
+            <div class="weather">
+                <table>
+                    <tr>
+                        <th colspan="7">Weather Forecast</th>
+                    </tr>
+                    <tr>
+                        <td id="day1"></td>
+                        <td id="day2"></td>
+                        <td id="day3"></td>
+                        <td id="day4"></td>
+                        <td id="day5"></td>
+                        <td id="day6"></td>
+                        <td id="day7"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="currency">currency exchange rate</div>
+            <button class='purchase'>Purchase</button>
+        </div>
+        <div class="box" id="dest2">
+            <h3 class="name">city name</h3>
+            <div class="price"></div>
+            <div class="flightInfo">flight info</div>
+            <div class="places">Places to See</div>
+            <div class="weather">
+                <table>
+                    <tr>
+                        <th colspan="7">Weather Forecast</th>
+                    </tr>
+                    <tr>
+                        <td id="day1"></td>
+                        <td id="day2"></td>
+                        <td id="day3"></td>
+                        <td id="day4"></td>
+                        <td id="day5"></td>
+                        <td id="day6"></td>
+                        <td id="day7"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="currency">currency exchange rate</div>
+            <button class='purchase'>Purchase</button>
+        </div>
+        <div class="box" id="dest3">
+            <h3 class="name">city name</h3>
+            <div class="price"></div>
+            <div class="flightInfo">flight info</div>
+            <div class="places">Places to See</div>
+            <div class="weather">
+                <table>
+                    <tr>
+                        <th colspan="7">Weather Forecast</th>
+                    </tr>
+                    <tr>
+                        <td id="day1"></td>
+                        <td id="day2"></td>
+                        <td id="day3"></td>
+                        <td id="day4"></td>
+                        <td id="day5"></td>
+                        <td id="day6"></td>
+                        <td id="day7"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="currency">currency exchange rate</div>
+            <button class='purchase'>Purchase</button>
+        </div>
+        <div class="box" id="dest4">
+            <h3 class="name">city name</h3>
+            <div class="price"></div>
+            <div class="flightInfo">flight info</div>
+            <div class="places">Places to See</div>
+            <div class="weather">
+                <table>
+                    <tr>
+                        <th colspan="7">Weather Forecast</th>
+                    </tr>
+                    <tr>
+                        <td id="day1"></td>
+                        <td id="day2"></td>
+                        <td id="day3"></td>
+                        <td id="day4"></td>
+                        <td id="day5"></td>
+                        <td id="day6"></td>
+                        <td id="day7"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="currency">currency exchange rate</div>
+            <button class='purchase'>Purchase</button>
+        </div>
+        <div class="box" id="dest5">
+            <h3 class="name">city name</h3>
+            <div class="price"></div>
+            <div class="flightInfo">flight info</div>
+            <div class="places">Places to See</div>
+            <div class="weather">
+                <table>
+                    <tr>
+                        <th colspan="7">Weather Forecast</th>
+                    </tr>
+                    <tr>
+                        <td id="day1"></td>
+                        <td id="day2"></td>
+                        <td id="day3"></td>
+                        <td id="day4"></td>
+                        <td id="day5"></td>
+                        <td id="day6"></td>
+                        <td id="day7"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="currency">currency exchange rate</div>
+            <button class='purchase'>Purchase</button>
+        </div>
+        <div class="box" id="dest6">
+            <h3 class="name">city name</h3>
+            <div class="price"></div>
+            <div class="flightInfo">flight info</div>
+            <div class="places">Places to See</div>
+            <div class="weather">
+                <table>
+                    <tr>
+                        <th colspan="7">Weather Forecast</th>
+                    </tr>
+                    <tr>
+                        <td id="day1"></td>
+                        <td id="day2"></td>
+                        <td id="day3"></td>
+                        <td id="day4"></td>
+                        <td id="day5"></td>
+                        <td id="day6"></td>
+                        <td id="day7"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="currency">currency exchange rate</div>
+            <button class='purchase'>Purchase</button>
+        </div>
+        <div class="box" id="dest7">
+            <h3 class="name">city name</h3>
+            <div class="price"></div>
+            <div class="flightInfo">flight info</div>
+            <div class="places">Places to See</div>
+            <div class="weather">
+                <table>
+                    <tr>
+                        <th colspan="7">Weather Forecast</th>
+                    </tr>
+                    <tr>
+                        <td id="day1"></td>
+                        <td id="day2"></td>
+                        <td id="day3"></td>
+                        <td id="day4"></td>
+                        <td id="day5"></td>
+                        <td id="day6"></td>
+                        <td id="day7"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="currency">currency exchange rate</div>
+            <button class='purchase'>Purchase</button>
+        </div>
+        <div class="box" id="dest8">
+            <h3 class="name">city name</h3>
+            <div class="price"></div>
+            <div class="flightInfo">flight info</div>
+            <div class="places">Places to See</div>
+            <div class="weather">
+                <table>
+                    <tr>
+                        <th colspan="7">Weather Forecast</th>
+                    </tr>
+                    <tr>
+                        <td id="day1"></td>
+                        <td id="day2"></td>
+                        <td id="day3"></td>
+                        <td id="day4"></td>
+                        <td id="day5"></td>
+                        <td id="day6"></td>
+                        <td id="day7"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="currency">currency exchange rate</div>
+            <button class='purchase'>Purchase</button>
+        </div>
+        <div class="box" id="dest9">
+            <h3 class="name">city name</h3>
+            <div class="price"></div>
+            <div class="flightInfo">flight info</div>
+            <div class="places">Places to See</div>
+            <div class="weather">
+                <table>
+                    <tr>
+                        <th colspan="7">Weather Forecast</th>
+                    </tr>
+                    <tr>
+                        <td id="day1"></td>
+                        <td id="day2"></td>
+                        <td id="day3"></td>
+                        <td id="day4"></td>
+                        <td id="day5"></td>
+                        <td id="day6"></td>
+                        <td id="day7"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="currency">currency exchange rate</div>
+            <button class='purchase'>Purchase</button>
+        </div>
 
-</div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-  <script type="text/javascript" src="app.js"></script>
-
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>
