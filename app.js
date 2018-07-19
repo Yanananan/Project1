@@ -337,11 +337,11 @@ function fillCurrencyInfo() {
 jQuery.when(currencyResponse, rateResponse).done(fillCurrencyInfo);
 
 // function to sort divs with button press
-$('#buttonDiv button').on('click', function() {
+$('#buttonDiv a').on('click', function() {
   var buttonID = $(this).attr('id');
   destinations.sort(function(a, b) {
-    if (buttonID == 'sortPopular') {return b.clicks - a.clicks;} 
-    else if (buttonID == 'sortPrice') {return a.currentPrice - b.currentPrice;} 
+    if (buttonID == 'sortPopular') {return b.clicks - a.clicks;}
+    else if (buttonID == 'sortPrice') {return a.currentPrice - b.currentPrice;}
     else {return a.duration - b.duration;}
   });
   console.log('sortedDestinations');
