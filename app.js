@@ -995,18 +995,19 @@ $(document).on('mouseenter', '.box', function() {
   //alert("hovered");
 //   $(this).css('width', '800px');
   $(this)
-    .children('div')
-    .css('display', 'block');
-    $(this).css('filter', 'brightness(50%)');
+    .find("div")
+    .show();
+    // $(this).css('filter', 'brightness(50%)');
+
 });
 $(document).on('mouseleave', '.box', function() {
   //alert("hovered");
 //   $(this).css('width', '800px');
   $(this)
-    .children('div')
-    .css('display', 'none');
+    .find("div")
+    .hide();
     // $(this).css('filter', 'brightness(100%)');
-});
+  });
 
 //Stripe integration
 function travelPakage() {

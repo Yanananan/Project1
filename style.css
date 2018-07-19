@@ -20,11 +20,20 @@ body {
     width: 90%;
     height: 500px;
     display: block;
-    color: white;
-    position: relative;
-    transition: 0.5s ease-in;
+     color: white; 
+    /*opacity: 1;
+    background: rgba(0,0,0,0.5);
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    position: relative; */
+    /* transition: 0.5s ease-in; */
+    /* z-index: -1; */
     /* filter: brightness(100%); */
 }
+/* div:hover + div{
+    display: block;
+} */
 
 #dest0{
     background: url("assets/Bridgetown.jpg");
@@ -34,13 +43,6 @@ body {
 
 }
 
-.box:hover{
-    background-image: linear-gradient(
-    to right bottom,
-   /* rgba(127, 213, 112, 0.8), */
-  rgba(0,0,0,0.5));
-  transition: 0.5s ease-out;
-}
 
 #dest1{
     background: url("assets/Zurich.jpg");
@@ -128,10 +130,10 @@ table, td, th{
 ul{
     list-style-type: none;
 }
-  
 
 .flightInfo, .places, .weather, .currency{
     display: none;
+
 }
 .bigFont{
     font-family: "Helvetica", sans-serif;
