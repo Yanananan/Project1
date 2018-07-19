@@ -47,39 +47,41 @@
             </div>
         </nav>
         <div class="jumbotron pt-3 pb-3">
-            <h1 class="display-7">We do the planinng - you do the traveling</h1>
+            <h1 class="display-7">We do the planning - you do the traveling</h1>
             <p>All travel packages start within 7 days!</p>
         </div>
-        <div class="box" id="dest0">
-            <div class="inner">
-                <h3 class="name">city name</h3>
-                <div class="flightInfo">flight info</div>
-                <div class="price"></div>
-                <div class="places">Places to See</div>
-                <div class="weather">
-                    <table>
-                        <tr>
-                            <th colspan="7">Weather Forecast</th>
-                        </tr>
-                        <tr>
-                            <td id="day1"></td>
-                            <td id="day2"></td>
-                            <td id="day3"></td>
-                            <td id="day4"></td>
-                            <td id="day5"></td>
-                            <td id="day6"></td>
-                            <td id="day7"></td>
-                        </tr>
-                    </table>
+        <div class="box row" id="dest0">
+            <div class="col">
+
+                <div class="row">
+                    <div class="col">
+                        <h3 class="name">city name</h3>
+                        <div class="price"></div>
+                    </div>
+                    <div class="col">
+                        <div class="places">Places to See</div>
+                        <div class="currency">currency exchange rate</div>
+
+                    </div>
                 </div>
-                <div class="currency">currency exchange rate</div>
-                <button class='purchase'>Purchase</button>
+
+                <div class="row">
+                    <button class='purchase'>Purchase</button>
+                </div>
+                <div class="row weather">
+                    <span class="col" id="day1"></span>
+                    <span class="col" id="day2"></span>
+                    <span class="col" id="day3"></span>
+                    <span class="col" id="day4"></span>
+                    <span class="col" id="day5"></span>
+                    <span class="col" id="day6"></span>
+                    <span class="col" id="day7"></span>
+                </div>
             </div>
         </div>
         <div class="box" id="dest1">
             <h3 class="name">city name</h3>
             <div class="price"></div>
-            <div class="flightInfo">flight info</div>
             <div class="places">Places to See</div>
             <div class="weather">
                 <table>
@@ -103,7 +105,6 @@
         <div class="box" id="dest2">
             <h3 class="name">city name</h3>
             <div class="price"></div>
-            <div class="flightInfo">flight info</div>
             <div class="places">Places to See</div>
             <div class="weather">
                 <table>

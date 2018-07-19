@@ -353,7 +353,7 @@ $('#buttonDiv a').on('click', function() {
 //weather API JS
 var weatherCount = 1;
 // This is our API key. Add your own API key between the ""
-//var weatherAPIKey = "798ea114a6654cf1a775a5fce9773800";
+// var weatherAPIKey = "798ea114a6654cf1a775a5fce9773800";
 //2nd API key
 var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
 var city = '';
@@ -376,19 +376,12 @@ function displayWeather() {
     for (var j = 0; j < 7; j++) {
       content = '';
       content +=
-        '<h6>Avg Temp: ' +
         destinations[i].weather.data[j].temp +
-        '&#176; C</h6>';
-      content +=
-        '<h6>Precipitation: ' + destinations[i].weather.data[j].pop + '%</h6>';
+        '&#176; C';
       content +=
         "<img src = 'https://www.weatherbit.io/static/img/icons/" +
         destinations[i].weather.data[j].weather.icon +
         ".png' alt='icon' width='30' height='30'>";
-      content +=
-        '<br><h6>' +
-        destinations[i].weather.data[j].weather.description +
-        '</h6>';
       $('#dest' + (weatherCount - 1) + ' .weather #day' + (j + 1)).html(
         content
       );
@@ -442,7 +435,7 @@ function displayPrice() {
     priceDiv = '#dest' + i + ' .price';
     currentPrice = destinations[i].ticketPrice[currMonthIndex][week];
     destinations[i].currentPrice = currentPrice;
-    $(priceDiv).text(currentPrice);
+    $(priceDiv).text(`$${currentPrice}`);
   }
 }
 displayPrice();
@@ -459,22 +452,22 @@ function thingsToDo(index) {
 }
 
 //document hover
-$(document).on('mouseenter', '.box', function() {
-  //alert("hovered");
-//   $(this).css('width', '800px');
-  $(this)
-    .children('div')
-    .css('display', 'block');
-    $(this).css('filter', 'brightness(50%)');
-});
-$(document).on('mouseleave', '.box', function() {
-  //alert("hovered");
-//   $(this).css('width', '800px');
-  $(this)
-    .children('div')
-    .css('display', 'none');
-    // $(this).css('filter', 'brightness(100%)');
-});
+// $(document).on('mouseenter', '.box', function() {
+//   //alert("hovered");
+// //   $(this).css('width', '800px');
+//   $(this)
+//     .children()
+//     .css('display', 'block');
+//     // $(this).css('filter', 'brightness(50%)');
+// });
+// $(document).on('mouseleave', '.box', function() {
+//   //alert("hovered");
+// //   $(this).css('width', '800px');
+//   $(this)
+//     .children('div')
+//     .css('display', 'none');
+//     // $(this).css('filter', 'brightness(100%)');
+// });
 
 //Stripe integration
 function travelPakage() {
@@ -523,39 +516,39 @@ window.addEventListener('popstate', function() {
 });
 
 //intercom
-window.intercomSettings = {
-    app_id: "qcf7lbf5"
-};
+// window.intercomSettings = {
+//     app_id: "qcf7lbf5"
+// };
 
-(function() {
-  var w = window;
-  var ic = w.Intercom;
-  if (typeof ic === 'function') {
-    ic('reattach_activator');
-    ic('update', intercomSettings);
-  } else {
-    var d = document;
-    var i = function() {
-      i.c(arguments);
-    };
-    i.q = [];
-    i.c = function(args) {
-      i.q.push(args);
-    };
-    w.Intercom = i;
-    function l() {
-      var s = d.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = 'https://widget.intercom.io/widget/qcf7lbf5';
-      var x = d.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    }
-    if (w.attachEvent) {
-      w.attachEvent('onload', l);
-    } else {
-      w.addEventListener('load', l, false);
-    }
-  }
-})();
+// (function() {
+//   var w = window;
+//   var ic = w.Intercom;
+//   if (typeof ic === 'function') {
+//     ic('reattach_activator');
+//     ic('update', intercomSettings);
+//   } else {
+//     var d = document;
+//     var i = function() {
+//       i.c(arguments);
+//     };
+//     i.q = [];
+//     i.c = function(args) {
+//       i.q.push(args);
+//     };
+//     w.Intercom = i;
+//     function l() {
+//       var s = d.createElement('script');
+//       s.type = 'text/javascript';
+//       s.async = true;
+//       s.src = 'https://widget.intercom.io/widget/qcf7lbf5';
+//       var x = d.getElementsByTagName('script')[0];
+//       x.parentNode.insertBefore(s, x);
+//     }
+//     if (w.attachEvent) {
+//       w.attachEvent('onload', l);
+//     } else {
+//       w.addEventListener('load', l, false);
+//     }
+//   }
+// })();
 

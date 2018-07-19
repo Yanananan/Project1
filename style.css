@@ -1,168 +1,217 @@
 /* Reset all elements */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #777;
-    padding: 30px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 2px;
+  color: #777;
+  padding: 30px;
 }
 
 #y {
-    background-color: red;
+  background-color: red;
 }
 #s {
-    background-color: blue;
+  background-color: blue;
 }
 #l {
-    background-color: green;
+  background-color: green;
 }
 
-#y,#s,#l {
-    color: white;
-    padding: 2px 5px;
-    font-weight: 500;
+#y,
+#s,
+#l {
+  color: white;
+  padding: 2px 5px;
+  font-weight: 500;
 }
 
 .jumbotron {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px;
+
+  background-color: #e63e43;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.box {
+  /* border: 2px black solid; */
+  margin: 50px auto;
+  width: 90%;
+  height: 500px;
+  display: block;
+  color: white;
+  position: relative;
+  border-radius: 8px;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
+  /* filter: brightness(100%); */
+}
+
+.name {
+  text-transform: uppercase;
+  margin: 50px 50px 10px;
+  /* padding-top: 100px;
+  text-align: center; */
+}
+
+.name,
+.price {
+  text-align: center;
+  font-size: 5vh;
+}
+
+.places::first-line {
     text-align: center;
-    text-transform: uppercase;
-    margin: 20px;
-    font-family: 'Roboto Slab', serif;
-    background-color: #e63e43;
-    color: #fff;
-    letter-spacing: 2px;
+    font-size: 5vh;
+    text-decoration: underline;
 }
 
-.box{
-    /* border: 2px black solid; */
-    margin: 5px auto;
-    width: 90%;
-    height: 500px;
-    display: block;
-    color: white;
-    position: relative;
-    transition: 0.5s ease-in;
-    /* filter: brightness(100%); */
+.places {
+    text-align: center;
+    margin: 30px 50px 10px;
 }
 
-#dest0{
-    background: url("assets/Bridgetown.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-}
-
-.box:hover{
-    background-image: linear-gradient(
-    to right bottom,
-   /* rgba(127, 213, 112, 0.8), */
-  rgba(0,0,0,0.5));
-  transition: 0.5s ease-out;
-}
-
-#dest1{
-    background: url("assets/Zurich.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 24%;
-}
-
-#dest2{
-    /* filter: brightness(50%); */
-    background: url("assets/Havana.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center 75%;
-}
-
-#dest3{
-    /* filter: brightness(50%); */
-    background: url("assets/Tokyo.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center 75%;
-}
-
-#dest4{
-    /* filter: brightness(50%); */
-    background: url("assets/Johannesburg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-#dest5{
-    /* filter: brightness(50%); */
-    background: url("assets/Manila.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-#dest6{
-    /* filter: brightness(50%); */
-    background: url("assets/Seoul.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-}
-
-#dest7{
-    background: url("assets/Sydney.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-
-}
-
-#dest8{
-    /* filter: brightness(50%); */
-    background: url("assets/Vancouver.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-
-}
-
-#dest9{
-    /* filter: brightness(50%); */
-    background: url("assets/Reykjavik.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-table{
-    border-collapse: collapse;
-    width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-}
-table, td, th{
-    border: 1px red solid;
-    align-content: center;
+.currency {
     text-align: center;
 }
-ul{
-    list-style-type: none;
+
+.price {
+  text-decoration: underline;
 }
 
-
-.flightInfo, .places, .weather, .currency{
-    display: none;
+#dest0 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('assets/Bridgetown.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: all 1.5s;
 }
-.bigFont{
-    font-family: "Helvetica", sans-serif;
+#dest0:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('assets/Bridgetown.jpg');
 }
-.smallFont{
-    font-family: "Verdana", serif;
 
+#dest1 {
+  background: url('assets/Zurich.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 24%;
+}
+
+#dest2 {
+  /* filter: brightness(50%); */
+  background: url('assets/Havana.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 75%;
+}
+
+#dest3 {
+  /* filter: brightness(50%); */
+  background: url('assets/Tokyo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 75%;
+}
+
+#dest4 {
+  /* filter: brightness(50%); */
+  background: url('assets/Johannesburg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#dest5 {
+  /* filter: brightness(50%); */
+  background: url('assets/Manila.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#dest6 {
+  /* filter: brightness(50%); */
+  background: url('assets/Seoul.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+#dest7 {
+  background: url('assets/Sydney.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+#dest8 {
+  /* filter: brightness(50%); */
+  background: url('assets/Vancouver.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+#dest9 {
+  /* filter: brightness(50%); */
+  background: url('assets/Reykjavik.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* table {
+  border-collapse: collapse;
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+table,
+td,
+th {
+  border: 1px red solid;
+  align-content: center;
+  text-align: center;
+} */
+ul {
+  list-style-type: none;
+}
+
+.flightInfo,
+.price,
+.places,
+.weather,
+.purchase,
+.currency {
+  display: block;
+}
+
+.bigFont {
+  font-family: 'Helvetica', sans-serif;
+}
+.smallFont {
+  font-family: 'Verdana', serif;
 }
