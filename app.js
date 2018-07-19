@@ -92,6 +92,8 @@ var destinations = [
     country: 'South Africa',
     currencyCode: 'ZAR',
     clicks: 5,
+    currentPrice: 1049,
+    duration: 8,
     ticketPrice: [
       [1049,1049, 684, 684],[ 754, 754, 754, 754],[ 533, 893, 759, 759],[ 579,3692, 512, 512],
       [ 487, 527, 646, 646],[ 734,1030, 666, 666],[ 723, 723,1000,1000],[1138, 815, 696, 485],
@@ -231,6 +233,8 @@ var weatherCount = 1;
 var weatherAPIKey = "798ea114a6654cf1a775a5fce9773800";
 //2nd API key
 // var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
+//3rd API key
+// var weatherAPIKey = '8021344adf024b6db2d7d6ab2d21e3e0';
 var city = '';
 var country = '';
 var queryURL = '';
@@ -393,10 +397,35 @@ jQuery.when(currencyResponse, rateResponse).done(fillCurrencyInfo);
 // function to sort divs with button press
 $('#buttonDiv a').on('click', function() {
   var buttonID = $(this).attr('id');
+  var buttonStatus = $(this).attr('status');
   destinations.sort(function(a, b) {
-    if (buttonID == 'sortPopular') {return b.clicks - a.clicks;}
-    else if (buttonID == 'sortPrice') {return a.currentPrice - b.currentPrice;}
-    else {return a.duration - b.duration;}
+    if (buttonID == 'sortPopular') {
+      if (buttonStatus == "ascending"){
+        $('#sortPopular').attr('status','decending');
+        return a.clicks - b.clicks;
+      } else {
+        $('#sortPopular').attr('status','ascending');
+        return b.clicks - a.clicks;
+      }
+    }
+    else if (buttonID == 'sortPrice') {
+      if (buttonStatus == "ascending"){
+        $('#sortPrice').attr('status','decending');
+        return a.currentPrice - b.currentPrice;
+      } else {
+        $('#sortPrice').attr('status','ascending');
+        return b.currentPrice - a.currentPrice;
+      }
+    }
+    else {
+      if (buttonStatus == "ascending"){
+        $('#sortDuration').attr('status','decending');
+        return a.duration - b.duration;
+      } else {
+        $('#sortDuration').attr('status','ascending');
+        return b.duration - a.duration;
+      }
+    }
   });
   console.log('sortedDestinations');
   console.log(destinations);
@@ -405,6 +434,7 @@ $('#buttonDiv a').on('click', function() {
   fillCurrencyInfo();
   displayWeather();
   background();
+  displayPrice();
 });
 
 
@@ -552,7 +582,7 @@ window.addEventListener('popstate', function() {
 
 //intercom
 window.intercomSettings = {
-    app_id: "qcf7lbf5"
+    app_id: "qcf7lbf5",
 };
 
 (function() {
@@ -561,27 +591,32 @@ window.intercomSettings = {
   if (typeof ic === 'function') {
     ic('reattach_activator');
     ic('update', intercomSettings);
-  } else {
+  } 
+  else {
     var d = document;
-    var i = function() {
+    var i = function() 
+      {
       i.c(arguments);
-    };
+      };
     i.q = [];
-    i.c = function(args) {
+    i.c = function(args) 
+      {
       i.q.push(args);
-    };
+      };
     w.Intercom = i;
-    function l() {
-      var s = d.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = 'https://widget.intercom.io/widget/qcf7lbf5';
-      var x = d.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    }
+    function l() 
+      {
+        var s = d.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://widget.intercom.io/widget/qcf7lbf5';
+        var x = d.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      }
     if (w.attachEvent) {
       w.attachEvent('onload', l);
-    } else {
+    } 
+    else {
       w.addEventListener('load', l, false);
     }
   }
