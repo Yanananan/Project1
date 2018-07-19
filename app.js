@@ -1,80 +1,7 @@
 //THINGS TO DO:
 //Keep track of copyright images
 
-// Initialize Firebase
-var config = {
-  apiKey: 'AIzaSyC2sHDpoYHYRhITz9g99TgSmJkb8kww-Vg',
-  authDomain: 'ysl-traveling.firebaseapp.com',
-  databaseURL: 'https://ysl-traveling.firebaseio.com',
-  projectId: 'ysl-traveling',
-  storageBucket: 'ysl-traveling.appspot.com',
-  messagingSenderId: '933230380678'
-};
-
-firebase.initializeApp(config);
-
-// Create a variable to reference the database.
-var database = firebase.database();
-var travelID;
-var dest0_clicks,
-  dest1_clicks,
-  dest2_clicks,
-  dest3_clicks,
-  dest4_clicks,
-  dest5_clicks,
-  dest6_clicks,
-  dest7_clicks,
-  dest8_clicks,
-  dest9_clicks;
-var travel_packages = database.ref().child('travel_packages');
-
-travel_packages.on('value', function(snap) {
-  dest0_clicks = snap.val().dest0.clicks;
-  dest1_clicks = snap.val().dest1.clicks;
-  dest2_clicks = snap.val().dest2.clicks;
-  dest3_clicks = snap.val().dest3.clicks;
-  dest4_clicks = snap.val().dest4.clicks;
-  dest5_clicks = snap.val().dest5.clicks;
-  dest6_clicks = snap.val().dest6.clicks;
-  dest7_clicks = snap.val().dest7.clicks;
-  dest8_clicks = snap.val().dest8.clicks;
-  dest9_clicks = snap.val().dest9.clicks;
-});
-
-//on page loads, add number of clicks to the destinations object
-travel_packages.once('value').then(function(snap) {
-  var numberOfClicks = [];
-  snap.forEach(function(child) {
-    numberOfClicks.push(child.val().clicks);
-  });
-
-  for (var dest in destinations) {
-    destinations[dest].clicks = numberOfClicks[dest];
-  }
-});
-
-$('.box').on('click', function() {
-  var numOfClicks = [
-    dest0_clicks,
-    dest1_clicks,
-    dest2_clicks,
-    dest3_clicks,
-    dest4_clicks,
-    dest5_clicks,
-    dest6_clicks,
-    dest7_clicks,
-    dest8_clicks,
-    dest9_clicks
-  ];
-
-  travelID = $(this).attr('id');
-  var lastChar = travelID.substr(4);
-  numOfClicks[lastChar]++;
-  database.ref(`travel_packages/${travelID}`).set({
-    clicks: numOfClicks[lastChar]
-  });
-});
-
+//-----------------------------GLOBAL OBJECT: DESTINATIONS---------------------------
 var destinations = [
   {
     city: 'Bridgetown',
@@ -165,6 +92,8 @@ var destinations = [
     country: 'South Africa',
     currencyCode: 'ZAR',
     clicks: 5,
+    currentPrice: 1049,
+    duration: 8,
     ticketPrice: [
       [1049,1049, 684, 684],[ 754, 754, 754, 754],[ 533, 893, 759, 759],[ 579,3692, 512, 512],
       [ 487, 527, 646, 646],[ 734,1030, 666, 666],[ 723, 723,1000,1000],[1138, 815, 696, 485],
@@ -286,18 +215,7 @@ var destinations = [
   }
 ];
 
-function fillCityName() {
-  var cityDiv, cityText, countryCode;
-  for (var i in destinations) {
-    cityDiv = '#dest' + i + ' .name';
-    countryCode = destinations[i].currencyCode;
-    cityText = destinations[i]['city'] + ', ' + destinations[i]['country'];
-    $(cityDiv).text(cityText);
-    thingsToDo(i);
-  }
-}
-fillCityName();
-
+//-------------------------------------GLOBAL VARIABLES------------------------------
 var currencyURL =
   'http://apilayer.net/api/list?access_key=a7f50bef8b2879efd43630712a46b389';
 var currencyResponse = $.ajax({
@@ -309,7 +227,147 @@ var rateURL =
 var rateResponse = $.ajax({
   url: rateURL
 });
+//weather API JS
+var weatherCount = 1;
+// This is our API key. Add your own API key between the ""
+// var weatherAPIKey = "798ea114a6654cf1a775a5fce9773800";
+//2nd API key
+// var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
+//3rd API key
+var weatherAPIKey = '8021344adf024b6db2d7d6ab2d21e3e0';
+var city = '';
+var country = '';
+var queryURL = '';
+var newTable, newTr, newTd;
+var queryURLResponse;
+var resCount = 0;
+var obj;
 
+
+
+//------------------------------------------------------------------
+//Display Price based on the current week
+var curr = new Date(); // get current date
+var currMonthIndex = curr.getMonth();
+var dayOfMonth = curr.getDate() - curr.getDay(); // day of the month
+var week;
+
+if (dayOfMonth < 8) {
+  week = 0;
+} else if (dayOfMonth > 7 && dayOfMonth < 15) {
+  week = 1;
+} else if (dayOfMonth > 14 && dayOfMonth < 22) {
+  week = 2;
+} else if (dayOfMonth > 22) {
+  week = 3;
+}
+//------------------------------------------------------------------------
+//-----------------------------END GLOBAL VARIABLES--------------------------------
+
+//----------------------------------FIREBASE----------------------------------
+// Initialize Firebase
+var config = {
+  apiKey: 'AIzaSyC2sHDpoYHYRhITz9g99TgSmJkb8kww-Vg',
+  authDomain: 'ysl-traveling.firebaseapp.com',
+  databaseURL: 'https://ysl-traveling.firebaseio.com',
+  projectId: 'ysl-traveling',
+  storageBucket: 'ysl-traveling.appspot.com',
+  messagingSenderId: '933230380678'
+};
+
+firebase.initializeApp(config);
+
+// Create a variable to reference the database.
+var database = firebase.database();
+var travelID;
+var dest0_clicks,
+  dest1_clicks,
+  dest2_clicks,
+  dest3_clicks,
+  dest4_clicks,
+  dest5_clicks,
+  dest6_clicks,
+  dest7_clicks,
+  dest8_clicks,
+  dest9_clicks;
+var travel_packages = database.ref().child('travel_packages');
+
+travel_packages.on('value', function(snap) {
+  dest0_clicks = snap.val().dest0.clicks;
+  dest1_clicks = snap.val().dest1.clicks;
+  dest2_clicks = snap.val().dest2.clicks;
+  dest3_clicks = snap.val().dest3.clicks;
+  dest4_clicks = snap.val().dest4.clicks;
+  dest5_clicks = snap.val().dest5.clicks;
+  dest6_clicks = snap.val().dest6.clicks;
+  dest7_clicks = snap.val().dest7.clicks;
+  dest8_clicks = snap.val().dest8.clicks;
+  dest9_clicks = snap.val().dest9.clicks;
+});
+
+//on page loads, add number of clicks to the destinations object
+travel_packages.once('value').then(function(snap) {
+  var numberOfClicks = [];
+  snap.forEach(function(child) {
+    numberOfClicks.push(child.val().clicks);
+  });
+
+  for (var dest in destinations) {
+    destinations[dest].clicks = numberOfClicks[dest];
+  }
+});
+//----------------------------------END FIREBASE-----------------------------------------------
+
+//-----------------------------FUNCTIONS THAT RUN ON PAGE LOAD------------------------------------
+fillCityName();  //move to initalize page functions sections
+displayPrice(); //move to initialize functions
+travelPakage(); //move to initialize functions
+//move to initialize page section
+for (var i = 0; i < destinations.length; i++) {
+  city = destinations[i].city;
+  country = destinations[i].country;
+  getWeather(city, country);
+}
+background();
+
+//-------------------------------------------------------------------------------------------
+//-----------------------------------------------FUNCTIONS----------------------------------------
+//function that updates the firebase database when user clicks on div
+$('.box').on('click', function() {
+  var numOfClicks = [
+    dest0_clicks,
+    dest1_clicks,
+    dest2_clicks,
+    dest3_clicks,
+    dest4_clicks,
+    dest5_clicks,
+    dest6_clicks,
+    dest7_clicks,
+    dest8_clicks,
+    dest9_clicks
+  ];
+
+  travelID = $(this).attr('id');
+  var lastChar = travelID.substr(4);
+  numOfClicks[lastChar]++;
+  database.ref(`travel_packages/${travelID}`).set({
+    clicks: numOfClicks[lastChar]
+  });
+});
+
+//function to fill in city names and things to do
+function fillCityName() {
+  var cityDiv, cityText, countryCode;
+  for (var i in destinations) {
+    cityDiv = '#dest' + i + ' .name';
+    countryCode = destinations[i].currencyCode;
+    cityText = destinations[i]['city'] + ', ' + destinations[i]['country'];
+    $(cityDiv).text(cityText);
+    thingsToDo(i);
+  }
+}
+
+//function to put in currency info into destinations objects
 function fillCurrencyInfo() {
   var currencyList = currencyResponse.responseJSON.currencies;
   console.log('currencyList:');
@@ -339,45 +397,56 @@ jQuery.when(currencyResponse, rateResponse).done(fillCurrencyInfo);
 // function to sort divs with button press
 $('#buttonDiv a').on('click', function() {
   var buttonID = $(this).attr('id');
+  var buttonStatus = $(this).attr('status');
   destinations.sort(function(a, b) {
-    if (buttonID == 'sortPopular') {return b.clicks - a.clicks;}
-    else if (buttonID == 'sortPrice') {return a.currentPrice - b.currentPrice;}
-    else {return a.duration - b.duration;}
+    if (buttonID == 'sortPopular') {
+      if (buttonStatus == "ascending"){
+        $('#sortPopular').attr('status','decending');
+        return a.clicks - b.clicks;
+      } else {
+        $('#sortPopular').attr('status','ascending');
+        return b.clicks - a.clicks;
+      }
+    }
+    else if (buttonID == 'sortPrice') {
+      if (buttonStatus == "ascending"){
+        $('#sortPrice').attr('status','decending');
+        return a.currentPrice - b.currentPrice;
+      } else {
+        $('#sortPrice').attr('status','ascending');
+        return b.currentPrice - a.currentPrice;
+      }
+    }
+    else {
+      if (buttonStatus == "ascending"){
+        $('#sortDuration').attr('status','decending');
+        return a.duration - b.duration;
+      } else {
+        $('#sortDuration').attr('status','ascending');
+        return b.duration - a.duration;
+      }
+    }
   });
   console.log('sortedDestinations');
   console.log(destinations);
+  weatherCount = 1;
   fillCityName();
   fillCurrencyInfo();
+  displayWeather();
+  background();
+  displayPrice();
 });
 
-//weather API JS
-var weatherCount = 1;
-// This is our API key. Add your own API key between the ""
-// var weatherAPIKey = "798ea114a6654cf1a775a5fce9773800";
-//2nd API key
-var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
-var city = '';
-var country = '';
-var queryURL = '';
-var newTable, newTr, newTd;
-var queryURLResponse;
-var resCount = 0;
-var obj;
 
-for (var i = 0; i < destinations.length; i++) {
-  city = destinations[i].city;
-  country = destinations[i].country; //FIX
-  getWeather(city, country);
-}
-
+//function that puts appropriate weather info into the divs and display on page
 function displayWeather() {
   var content = '';
   for (var i = 0; i < destinations.length; i++) {
     for (var j = 0; j < 7; j++) {
       content = '';
       content +=
-        destinations[i].weather.data[j].temp +
-        '&#176; C';
+        '<div>' + destinations[i].weather.data[j].temp +
+        '&#176; C' + '</div>';
       content +=
         "<img src = 'https://www.weatherbit.io/static/img/icons/" +
         destinations[i].weather.data[j].weather.icon +
@@ -385,11 +454,13 @@ function displayWeather() {
       $('#dest' + (weatherCount - 1) + ' .weather #day' + (j + 1)).html(
         content
       );
+      console.log('content', content);
     }
     weatherCount++;
   }
 }
 
+//function that queries the weather API
 function getWeather(a, b) {
   queryURL =
     'https://api.weatherbit.io/v2.0/forecast/daily?city=' +
@@ -412,23 +483,8 @@ function getWeather(a, b) {
   });
 }
 
-//Display Price based on the current week
-var curr = new Date(); // get current date
-var currMonthIndex = curr.getMonth();
-var dayOfMonth = curr.getDate() - curr.getDay(); // day of the month
-var week;
 
-if (dayOfMonth < 8) {
-  week = 0;
-} else if (dayOfMonth > 7 && dayOfMonth < 15) {
-  week = 1;
-} else if (dayOfMonth > 14 && dayOfMonth < 22) {
-  week = 2;
-} else if (dayOfMonth > 22) {
-  week = 3;
-}
-
-//add ticket price to the city
+//function that adds ticket price to the city
 function displayPrice() {
   var priceDiv;
   for (var i = 0; i < destinations.length; i++) {
@@ -438,10 +494,11 @@ function displayPrice() {
     $(priceDiv).text(`$${currentPrice}`);
   }
 }
-displayPrice();
 
-//code to Populate things to do in appropriate boxes
+
+//function that Populate things to do in appropriate boxes
 function thingsToDo(index) {
+  $('#dest' + index + ' .places');
   var newli, newul;
   newul = $('<ul>');
   for (var j = 0; j < destinations[index].stufftodo.length; j++) {
@@ -451,25 +508,26 @@ function thingsToDo(index) {
   $('#dest' + index + ' .places').append(newul);
 }
 
-//document hover
+//function that refreshes background image in dest divs
+function background(){
+  for (var i in destinations){
+    $("#dest"+i).css("background-image",'linear-gradient(to right bottom, rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("assets/'+destinations[i].city +'.jpg")');
+  }
+}
+
+// Functions that display additional information when user hovers over destinations
 // $(document).on('mouseenter', '.box', function() {
-//   //alert("hovered");
-// //   $(this).css('width', '800px');
 //   $(this)
 //     .children()
-//     .css('display', 'block');
-//     // $(this).css('filter', 'brightness(50%)');
+//     .show();
 // });
 // $(document).on('mouseleave', '.box', function() {
-//   //alert("hovered");
-// //   $(this).css('width', '800px');
 //   $(this)
-//     .children('div')
-//     .css('display', 'none');
-//     // $(this).css('filter', 'brightness(100%)');
-// });
+//     .children()
+//     .hide();
+//   });
 
-//Stripe integration
+//function that calls for Stripe integration
 function travelPakage() {
   for (var i = 0; i < destinations.length; i++) {
     var priceDiv = $(`#dest${i} .purchase`);
@@ -484,7 +542,7 @@ function travelPakage() {
   }
 }
 
-travelPakage();
+
 
 var handler = StripeCheckout.configure({
   key: 'pk_test_PAkJqhf7aSDhFhy4yh7qJLsR',
@@ -495,6 +553,7 @@ var handler = StripeCheckout.configure({
     // Get the token ID to your server-side code for use.
   }
 });
+
 
 $('.purchase').on('click', function(e) {
   var city = $(this).attr('data-city');
