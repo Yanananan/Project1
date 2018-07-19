@@ -14,6 +14,32 @@ body {
     padding: 30px;
 }
 
+#y {
+    background-color: red;
+}
+#s {
+    background-color: blue;
+}
+#l {
+    background-color: green;
+}
+
+#y,#s,#l {
+    color: white;
+    padding: 2px 5px;
+    font-weight: 500;
+}
+
+.jumbotron {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 20px;
+    font-family: 'Roboto Slab', serif;
+    background-color: #e63e43;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
 .box{
     /* border: 2px black solid; */
     margin: 5px auto;
@@ -54,7 +80,7 @@ body {
     background: url("assets/Havana.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center 75%; 
+    background-position: center 75%;
 }
 
 #dest3{
@@ -128,7 +154,7 @@ table, td, th{
 ul{
     list-style-type: none;
 }
-  
+
 
 .flightInfo, .places, .weather, .currency{
     display: none;
