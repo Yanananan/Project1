@@ -72,10 +72,6 @@ body {
   text-align: center;
 }
 
-.price {
-  text-decoration: underline;
-}
-
 .purchase {
   color: white;
   background-color: transparent;
@@ -217,12 +213,8 @@ ul {
   list-style-type: none;
 }
 
-.flightInfo,
-.price,
-.places,
-.purchase,
-.currency {
-  display: block;
+.hidden {
+  display: none;
 }
 
 .bigFont {
