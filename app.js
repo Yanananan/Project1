@@ -322,9 +322,9 @@ var weatherCount = 1;
 // This is our API key. Add your own API key between the ""
 // var weatherAPIKey = "798ea114a6654cf1a775a5fce9773800";
 //2nd API key
-// var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
+var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
 //3rd API key
-var weatherAPIKey = '8021344adf024b6db2d7d6ab2d21e3e0';
+// var weatherAPIKey = '8021344adf024b6db2d7d6ab2d21e3e0';
 var city = '';
 var country = '';
 var queryURL = '';
@@ -611,6 +611,7 @@ $(document).on('mouseenter', '.box', function() {
   $(this)
     .find('.hidden')
     .removeClass('hidden');
+  $('.summary').addClass('row');
 });
 $(document).on('mouseleave', '.box', function() {
   $(this)
@@ -625,6 +626,7 @@ $(document).on('mouseleave', '.box', function() {
   $(this)
     .find('.purchase')
     .addClass('hidden');
+  $('.summary').removeClass('row');
 });
 
 //function that calls for Stripe integration
@@ -672,38 +674,38 @@ window.addEventListener('popstate', function() {
 });
 
 //intercom
-window.intercomSettings = {
-    app_id: "qcf7lbf5"
-};
+// window.intercomSettings = {
+//     app_id: "qcf7lbf5"
+// };
 
-(function() {
-  var w = window;
-  var ic = w.Intercom;
-  if (typeof ic === 'function') {
-    ic('reattach_activator');
-    ic('update', intercomSettings);
-  } else {
-    var d = document;
-    var i = function() {
-      i.c(arguments);
-    };
-    i.q = [];
-    i.c = function(args) {
-      i.q.push(args);
-    };
-    w.Intercom = i;
-    function l() {
-      var s = d.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = 'https://widget.intercom.io/widget/qcf7lbf5';
-      var x = d.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    }
-    if (w.attachEvent) {
-      w.attachEvent('onload', l);
-    } else {
-      w.addEventListener('load', l, false);
-    }
-  }
-})();
+// (function() {
+//   var w = window;
+//   var ic = w.Intercom;
+//   if (typeof ic === 'function') {
+//     ic('reattach_activator');
+//     ic('update', intercomSettings);
+//   } else {
+//     var d = document;
+//     var i = function() {
+//       i.c(arguments);
+//     };
+//     i.q = [];
+//     i.c = function(args) {
+//       i.q.push(args);
+//     };
+//     w.Intercom = i;
+//     function l() {
+//       var s = d.createElement('script');
+//       s.type = 'text/javascript';
+//       s.async = true;
+//       s.src = 'https://widget.intercom.io/widget/qcf7lbf5';
+//       var x = d.getElementsByTagName('script')[0];
+//       x.parentNode.insertBefore(s, x);
+//     }
+//     if (w.attachEvent) {
+//       w.attachEvent('onload', l);
+//     } else {
+//       w.addEventListener('load', l, false);
+//     }
+//   }
+// })();

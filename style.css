@@ -44,17 +44,41 @@ body {
   transition: all 1.5s;
 }
 
-.name {
+#center {
+  text-align: center;
   text-transform: uppercase;
-  margin: 50px 50px 10px;
-  /* padding-top: 100px;
-  text-align: center; */
+  margin-top: 150px;
+
+  animation-name: moveInUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
-.name,
+.name {
+  font-size: 50px;
+}
+
 .price {
-  text-align: center;
+  font-size: 40px;
+}
+
+.box:hover .name {
+  text-transform: uppercase;
   font-size: 5vh;
+}
+
+.box:hover .price {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.box:hover #center{
+  text-align: center;
+  margin-top: 50px;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
 .places::first-line {
@@ -63,13 +87,13 @@ body {
   text-decoration: underline;
 }
 
-.places {
+.places, .currency {
   text-align: center;
   margin: 30px 50px 10px;
-}
 
-.currency {
-  text-align: center;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
 .purchase {
@@ -90,6 +114,10 @@ body {
   display: flex;
   text-align: center;
   margin-top: 100px;
+
+  animation-name: moveInUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
 button:hover {
@@ -102,7 +130,56 @@ button:focus {
   outline: none;
 }
 
-#dest6, #dest7 {
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  80% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+#dest6,
+#dest7 {
   background-position: bottom;
 }
 
@@ -166,7 +243,6 @@ button:focus {
     url('assets/Manila.jpg');
 }
 
-
 #dest6:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   background-image: linear-gradient(
@@ -176,7 +252,6 @@ button:focus {
     ),
     url('assets/Seoul.jpg');
 }
-
 
 #dest7:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -198,7 +273,6 @@ button:focus {
     url('assets/Vancouver.jpg');
 }
 
-
 #dest9:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   background-image: linear-gradient(
@@ -213,8 +287,18 @@ ul {
   list-style-type: none;
 }
 
-.hidden {
-  display: none;
+@media (min-width: 992px) {
+  .hidden {
+    display: none;
+  }
+}
+@media (max-width: 991.98px) {
+  .places, .currency, .weather{
+    display: none;
+  }
+  #center {
+    margin-top: 50px;
+  }
 }
 
 .bigFont {
