@@ -1,171 +1,217 @@
 /* Reset all elements */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #777;
-    padding: 30px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 2px;
+  color: #777;
 }
 
-#y {
-    background-color: red;
-}
-#s {
-    background-color: blue;
-}
-#l {
-    background-color: green;
-}
-
-#y,#s,#l {
-    color: white;
-    padding: 2px 5px;
-    font-weight: 500;
+#logo {
+  width: 120px;
 }
 
 .jumbotron {
-    text-align: center;
-    text-transform: uppercase;
-    margin: 20px;
-    font-family: 'Roboto Slab', serif;
-    background-color: #e63e43;
-    color: #fff;
-    letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px 0px;
+
+  background-color: #232f3e;
+  color: #fff;
+  letter-spacing: 2px;
 }
 
-.box{
-    /* border: 2px black solid; */
-    margin: 5px auto;
-    width: 90%;
-    height: 500px;
-    display: block;
-     color: white; 
-    /*opacity: 1;
-    background: rgba(0,0,0,0.5);
-    -moz-transition: all 1s;
-    -webkit-transition: all 1s;
-    transition: all 1s;
-    position: relative; */
-    /* transition: 0.5s ease-in; */
-    /* z-index: -1; */
-    /* filter: brightness(100%); */
+.box {
+  /* border: 2px black solid; */
+  margin: 50px auto;
+  width: 90%;
+  height: 500px;
+  display: block;
+  color: white;
+  position: relative;
+  border-radius: 8px;
+  padding: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all 1.5s;
 }
-/* div:hover + div{
-    display: block;
+
+#center {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 150px;
+
+  animation-name: moveInUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.name {
+  font-size: 50px;
+}
+
+.price {
+  font-size: 40px;
+}
+
+.box:hover .name {
+  text-transform: uppercase;
+  font-size: 5vh;
+}
+
+.box:hover .price {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.box:hover #center{
+  text-align: center;
+  margin-top: 50px;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.places::first-line {
+  text-align: center;
+  font-size: 5vh;
+  text-decoration: underline;
+}
+
+.places, .currency {
+  text-align: center;
+  margin: 30px 50px 10px;
+
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.currency{
+  margin: 30px 0 10px;
+}
+
+.purchase {
+  color: white;
+  background-color: transparent;
+  border: 1px solid #e63e43;
+  cursor: pointer;
+  width: 200px;
+  font-size: 20px;
+  border-radius: 200px;
+  margin: 20px auto;
+  padding: 5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.weather {
+  display: flex;
+  text-align: center;
+  margin-top: 100px;
+
+  animation-name: moveInUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+  outline: none;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  80% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* #dest6,
+#dest7 {
+  background-position: bottom;
 } */
 
-#dest0{
-    background: url("assets/Bridgetown.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
+#dest0:hover, #dest1:hover, #dest2:hover, #dest3:hover, #dest4:hover, #dest5:hover, #dest6:hover, #dest7:hover, #dest8:hover, #dest9:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-
-#dest1{
-    background: url("assets/Zurich.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 24%;
+ul {
+  list-style-type: none;
 }
 
-#dest2{
-    /* filter: brightness(50%); */
-    background: url("assets/Havana.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center 75%;
-}
-
-#dest3{
-    /* filter: brightness(50%); */
-    background: url("assets/Tokyo.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center 75%;
-}
-
-#dest4{
-    /* filter: brightness(50%); */
-    background: url("assets/Johannesburg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-#dest5{
-    /* filter: brightness(50%); */
-    background: url("assets/Manila.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-#dest6{
-    /* filter: brightness(50%); */
-    background: url("assets/Seoul.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-}
-
-#dest7{
-    background: url("assets/Sydney.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-
-}
-
-#dest8{
-    /* filter: brightness(50%); */
-    background: url("assets/Vancouver.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-
-}
-
-#dest9{
-    /* filter: brightness(50%); */
-    background: url("assets/Reykjavik.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-table{
-    border-collapse: collapse;
-    width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-}
-table, td, th{
-    border: 1px red solid;
-    align-content: center;
-    text-align: center;
-}
-ul{
-    list-style-type: none;
-}
-
-
-.flightInfo, .places, .weather, .currency, .price{
+@media (min-width: 992px) {
+  .hidden {
     display: none;
-
+  }
 }
-.bigFont{
-    font-family: "Helvetica", sans-serif;
+@media (max-width: 991.98px) {
+  .places, .currency, .weather{
+    display: none;
+  }
+  #center {
+    margin-top: 50px;
+  }
 }
-.smallFont{
-    font-family: "Verdana", serif;
 
+.bigFont {
+  font-family: 'Helvetica', sans-serif;
+}
+.smallFont {
+  font-family: 'Verdana', serif;
 }

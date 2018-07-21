@@ -11,9 +11,18 @@ var destinations = [
     currentPrice: 870,
     duration: 3,
     ticketPrice: [
-      [616, 616, 463, 463],[634, 930, 643, 557],[548, 702, 471, 471],[850, 617, 532, 565],
-      [673, 673, 673, 673],[702, 774,1008,1008],[870, 870, 870, 870],[661, 661, 638, 638],
-      [605, 605, 605, 605],[529, 529, 567, 567],[601, 601, 623, 623],[801, 801, 801, 801]
+      [616, 616, 463, 463],
+      [634, 930, 643, 557],
+      [548, 702, 471, 471],
+      [850, 617, 532, 565],
+      [673, 673, 673, 673],
+      [702, 774, 1008, 1008],
+      [870, 870, 870, 870],
+      [661, 661, 638, 638],
+      [605, 605, 605, 605],
+      [529, 529, 567, 567],
+      [601, 601, 623, 623],
+      [801, 801, 801, 801]
     ],
     stufftodo: [
       'Carlisle Bay',
@@ -21,8 +30,7 @@ var destinations = [
       "St. Michael's Cathedral",
       'National Heroes Square',
       'Barbados Garrison'
-    ],
-    backgoundImgCopyright: 'Business Barbados'
+    ]
   },
   {
     city: 'Zurich',
@@ -32,9 +40,18 @@ var destinations = [
     currentPrice: 820,
     duration: 5,
     ticketPrice: [
-        [ 858, 858, 648, 648],[ 663, 663, 663, 663],[ 663, 663, 663, 663],[974, 974, 974, 974],
-        [ 706, 706, 706, 706],[1108,1108,1108,1108],[1521,1521,1648,1648],[820,1264,1150, 565],
-        [1765,1765,1100,1100],[ 976, 573, 756, 756],[ 994, 994, 715, 715],[953, 953, 953, 953]
+      [858, 858, 648, 648],
+      [663, 663, 663, 663],
+      [663, 663, 663, 663],
+      [974, 974, 974, 974],
+      [706, 706, 706, 706],
+      [1108, 1108, 1108, 1108],
+      [1521, 1521, 1648, 1648],
+      [820, 1264, 1150, 565],
+      [1765, 1765, 1100, 1100],
+      [976, 573, 756, 756],
+      [994, 994, 715, 715],
+      [953, 953, 953, 953]
     ],
     stufftodo: [
       'Old Town',
@@ -42,8 +59,7 @@ var destinations = [
       'Kunsthaus Zurich',
       'Bahnhofstrasse',
       'Fraumunster'
-    ],
-    backgoundImgCopyright: 'sbbmch.cl'
+    ]
   },
   {
     city: 'Havana',
@@ -53,9 +69,18 @@ var destinations = [
     currentPrice: 542,
     duration: 7,
     ticketPrice: [
-        [406, 406, 406, 406],[391, 391, 391, 391],[369, 369, 369, 369],[437, 437, 437, 437],
-        [403, 403, 403, 403],[481, 481, 481, 481],[542, 542, 542, 542],[378, 378, 378, 378],
-        [369, 369, 369, 369],[391, 391, 391, 391],[398, 398, 398, 398],[478, 478, 478, 478]
+      [406, 406, 406, 406],
+      [391, 391, 391, 391],
+      [369, 369, 369, 369],
+      [437, 437, 437, 437],
+      [403, 403, 403, 403],
+      [481, 481, 481, 481],
+      [542, 542, 542, 542],
+      [378, 378, 378, 378],
+      [369, 369, 369, 369],
+      [391, 391, 391, 391],
+      [398, 398, 398, 398],
+      [478, 478, 478, 478]
     ],
     stufftodo: [
       'Habana Vieja',
@@ -63,8 +88,7 @@ var destinations = [
       'Fortaleza de San Carlos de la Cubana',
       'El Capitolio',
       'Paseo del Prado'
-    ],
-    backgoundImgCopyright: 'Ross Garden Tours'
+    ]
   },
   {
     city: 'Tokyo',
@@ -74,9 +98,18 @@ var destinations = [
     currentPrice: 836,
     duration: 8,
     ticketPrice: [
-        [1049, 684, 754, 533],[ 754, 754, 754, 754],[ 533, 533, 893, 759],[ 579,692, 512,  512],
-        [ 487, 527, 646, 646],[ 734,1030, 666, 956],[ 836, 723,1000,1000],[1138, 815, 696, 485],
-        [ 404, 396, 497, 606],[ 790, 804, 595, 495],[ 508, 887, 571, 571],[ 624, 564, 579,1124],
+      [1049, 684, 754, 533],
+      [754, 754, 754, 754],
+      [533, 533, 893, 759],
+      [579, 692, 512, 512],
+      [487, 527, 646, 646],
+      [734, 1030, 666, 956],
+      [836, 723, 1000, 1000],
+      [1138, 815, 696, 485],
+      [404, 396, 497, 606],
+      [790, 804, 595, 495],
+      [508, 887, 571, 571],
+      [624, 564, 579, 1124]
     ],
     stufftodo: [
       'The Imperial Palace',
@@ -84,8 +117,7 @@ var destinations = [
       'Asakusa and the Senso-ji Temple',
       'The Meiji Shrine',
       'The Tokyo Skytree'
-    ],
-    backgoundImgCopyright: 'wallsauce.com'
+    ]
   },
   {
     city: 'Johannesburg',
@@ -95,9 +127,18 @@ var destinations = [
     currentPrice: 1049,
     duration: 8,
     ticketPrice: [
-      [1049,1049, 684, 684],[ 754, 754, 754, 754],[ 533, 893, 759, 759],[ 579,3692, 512, 512],
-      [ 487, 527, 646, 646],[ 734,1030, 666, 666],[ 723, 723,1000,1000],[1138, 815, 696, 485],
-      [ 404, 396, 497, 484],[ 790, 804, 595, 523],[ 508, 887, 571, 571],[ 624, 564, 579,1124]
+      [1049, 1049, 684, 684],
+      [754, 754, 754, 754],
+      [533, 893, 759, 759],
+      [579, 3692, 512, 512],
+      [487, 527, 646, 646],
+      [734, 1030, 666, 666],
+      [723, 723, 1000, 1000],
+      [1138, 815, 696, 485],
+      [404, 396, 497, 484],
+      [790, 804, 595, 523],
+      [508, 887, 571, 571],
+      [624, 564, 579, 1124]
     ],
     stufftodo: [
       'The Apartheid Museum',
@@ -105,8 +146,7 @@ var destinations = [
       'The Maboneng Precinct',
       'The Lindfield Victorian House Museum',
       'Market Theatre'
-    ],
-    backgoundImgCopyright: 'Andre Roberge (trekearth)'
+    ]
   },
   {
     city: 'Manila',
@@ -116,9 +156,18 @@ var destinations = [
     currentPrice: 836,
     duration: 9,
     ticketPrice: [
-      [971, 971, 588, 588],[821, 821, 821, 821],[501, 501, 549, 549],[498, 498, 498, 498],
-      [618, 740, 899, 899],[635, 635, 635, 635],[909, 909, 909, 909],[621, 564, 537, 537],
-      [570, 570, 537, 537],[555, 672, 584, 583],[555, 555, 555, 555],[555, 636,1794, 971]
+      [971, 971, 588, 588],
+      [821, 821, 821, 821],
+      [501, 501, 549, 549],
+      [498, 498, 498, 498],
+      [618, 740, 899, 899],
+      [635, 635, 635, 635],
+      [909, 909, 909, 909],
+      [621, 564, 537, 537],
+      [570, 570, 537, 537],
+      [555, 672, 584, 583],
+      [555, 555, 555, 555],
+      [555, 636, 1794, 971]
     ],
     stufftodo: [
       'Rizal Park',
@@ -126,8 +175,7 @@ var destinations = [
       'San Agustin Church and Museum',
       'Fort Santiago',
       'Divisoria Market'
-    ],
-    backgoundImgCopyright: 'wikipedia'
+    ]
   },
   {
     city: 'Seoul',
@@ -137,9 +185,18 @@ var destinations = [
     currentPrice: 836,
     duration: 8,
     ticketPrice: [
-        [802, 802, 807, 807],[709, 709, 709, 709],[689, 689, 756, 756],[513, 513, 568, 568],
-        [741, 741, 741, 741],[730, 730, 974, 974],[561, 561, 946, 946],[890, 777, 463, 651],
-        [456, 510, 532, 709],[717, 750, 691, 497],[476, 661, 503, 504],[520, 520,1541,1541]
+      [802, 802, 807, 807],
+      [709, 709, 709, 709],
+      [689, 689, 756, 756],
+      [513, 513, 568, 568],
+      [741, 741, 741, 741],
+      [730, 730, 974, 974],
+      [561, 561, 946, 946],
+      [890, 777, 463, 651],
+      [456, 510, 532, 709],
+      [717, 750, 691, 497],
+      [476, 661, 503, 504],
+      [520, 520, 1541, 1541]
     ],
     stufftodo: [
       'Gyeongbokgung',
@@ -147,8 +204,7 @@ var destinations = [
       'War Memorial of Korea',
       'Noryangjin Fish Market',
       'Namdaemun Market'
-    ],
-    backgoundImgCopyright: 'BBC.com'
+    ]
   },
   {
     city: 'Sydney',
@@ -158,9 +214,18 @@ var destinations = [
     currentPrice: 836,
     duration: 8,
     ticketPrice: [
-        [1201,1201,1201,1201],[ 899, 952, 664, 664],[ 789, 789, 789, 789],[1216,1216,1216,1216],
-        [1216,1216,1216,1216],[1438,1438,1438,1438],[1242,1242,1242,1242],[1028,1117, 954, 954],
-        [ 741, 769, 930, 932],[1179, 861,1004, 942],[ 988,1000, 691, 691],[ 665,1244,1582,1201]
+      [1201, 1201, 1201, 1201],
+      [899, 952, 664, 664],
+      [789, 789, 789, 789],
+      [1216, 1216, 1216, 1216],
+      [1216, 1216, 1216, 1216],
+      [1438, 1438, 1438, 1438],
+      [1242, 1242, 1242, 1242],
+      [1028, 1117, 954, 954],
+      [741, 769, 930, 932],
+      [1179, 861, 1004, 942],
+      [988, 1000, 691, 691],
+      [665, 1244, 1582, 1201]
     ],
     stufftodo: [
       'Sydney Opera House',
@@ -168,8 +233,7 @@ var destinations = [
       'Queen Victoria Building',
       'Barangaroo Reserve',
       'George Street'
-    ],
-    backgoundImgCopyright: 'parkregiscitycentre.com.au'
+    ]
   },
   {
     city: 'Vancouver',
@@ -179,9 +243,18 @@ var destinations = [
     currentPrice: 836,
     duration: 8,
     ticketPrice: [
-        [335, 335, 335, 335],[437, 437, 437, 437],[437, 437, 437, 437],[437, 437, 437, 437],
-        [300, 300, 300, 300],[282, 282, 282, 282],[297, 297, 279, 279],[316, 298, 300, 300],
-        [272, 308, 400, 405],[253, 197, 293, 252],[370, 287, 515, 515],[355, 355, 383, 383]
+      [335, 335, 335, 335],
+      [437, 437, 437, 437],
+      [437, 437, 437, 437],
+      [437, 437, 437, 437],
+      [300, 300, 300, 300],
+      [282, 282, 282, 282],
+      [297, 297, 279, 279],
+      [316, 298, 300, 300],
+      [272, 308, 400, 405],
+      [253, 197, 293, 252],
+      [370, 287, 515, 515],
+      [355, 355, 383, 383]
     ],
     stufftodo: [
       'Granville Island',
@@ -189,8 +262,7 @@ var destinations = [
       'Chinatown',
       'Stanley Park',
       'Museum of Vancouver'
-    ],
-    backgoundImgCopyright: 'vancouver.ca'
+    ]
   },
   {
     city: 'Reykjavik',
@@ -200,9 +272,18 @@ var destinations = [
     currentPrice: 836,
     duration: 1,
     ticketPrice: [
-        [ 510, 510, 510, 510],[ 510, 510, 510, 510],[ 510, 510, 510, 510],[ 510, 510, 510, 510],
-        [ 510, 510, 510, 510],[ 510, 510, 510, 510],[ 633, 633, 813, 813],[ 593, 563, 693, 935],
-        [ 443, 464, 374, 374],[ 746, 746, 884, 844],[1475,1475,1475,1475],[ 870, 870, 633, 644]
+      [510, 510, 510, 510],
+      [510, 510, 510, 510],
+      [510, 510, 510, 510],
+      [510, 510, 510, 510],
+      [510, 510, 510, 510],
+      [510, 510, 510, 510],
+      [633, 633, 813, 813],
+      [593, 563, 693, 935],
+      [443, 464, 374, 374],
+      [746, 746, 884, 844],
+      [1475, 1475, 1475, 1475],
+      [870, 870, 633, 644]
     ],
     stufftodo: [
       'Hallgrimskirkja Church',
@@ -210,8 +291,7 @@ var destinations = [
       'Videy Island',
       'The Settlement Exhibition',
       'Whale Watching'
-    ],
-    backgoundImgCopyright: 'grayline.is'
+    ]
   }
 ];
 
@@ -230,20 +310,16 @@ var rateResponse = $.ajax({
 //weather API JS
 var weatherCount = 1;
 // This is our API key. Add your own API key between the ""
-var weatherAPIKey = "798ea114a6654cf1a775a5fce9773800";
+// var weatherAPIKey = '798ea114a6654cf1a775a5fce9773800';
 //2nd API key
-// var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
+var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
 //3rd API key
 // var weatherAPIKey = '8021344adf024b6db2d7d6ab2d21e3e0';
 var city = '';
 var country = '';
 var queryURL = '';
-var newTable, newTr, newTd;
 var queryURLResponse;
 var resCount = 0;
-var obj;
-
-
 
 //------------------------------------------------------------------
 //Display Price based on the current week
@@ -277,85 +353,56 @@ var config = {
 
 firebase.initializeApp(config);
 
-// Create a variable to reference the database.
+// Create a variable to reference the database.*************************
 var database = firebase.database();
 var travelID;
-var dest0_clicks,
-  dest1_clicks,
-  dest2_clicks,
-  dest3_clicks,
-  dest4_clicks,
-  dest5_clicks,
-  dest6_clicks,
-  dest7_clicks,
-  dest8_clicks,
-  dest9_clicks;
 var travel_packages = database.ref().child('travel_packages');
 
-travel_packages.on('value', function(snap) {
-  dest0_clicks = snap.val().dest0.clicks;
-  dest1_clicks = snap.val().dest1.clicks;
-  dest2_clicks = snap.val().dest2.clicks;
-  dest3_clicks = snap.val().dest3.clicks;
-  dest4_clicks = snap.val().dest4.clicks;
-  dest5_clicks = snap.val().dest5.clicks;
-  dest6_clicks = snap.val().dest6.clicks;
-  dest7_clicks = snap.val().dest7.clicks;
-  dest8_clicks = snap.val().dest8.clicks;
-  dest9_clicks = snap.val().dest9.clicks;
-});
-
-//on page loads, add number of clicks to the destinations object
-travel_packages.once('value').then(function(snap) {
-  var numberOfClicks = [];
-  snap.forEach(function(child) {
-    numberOfClicks.push(child.val().clicks);
-  });
-
-  for (var dest in destinations) {
-    destinations[dest].clicks = numberOfClicks[dest];
+travel_packages.once('value', function(snap) {
+  //on page load/getting of firebase info, sort destinations array to match the order of cities in firebase
+  var tempDestinations = [];
+  for (var j in snap.val()) {
+    for (var i in destinations) {
+      if (destinations[i].city == snap.val()[j].name) {
+        tempDestinations.push(destinations[i]);
+        break;
+      }
+    }
   }
+  destinations = tempDestinations;
+  //then update number of clicks from firebase into new destinations array
+  for (var k in destinations) {
+    destinations[k].clicks = snap.val()['dest' + k].clicks;
+  }
+  //then run all the functions that should run on page load
+  fillCurrencyInfo();
+  fillCityName(); //move to initalize page functions sections
+  displayPriceDuration(); //move to initialize functions
+  travelPakage(); //move to initialize functions
+  //move to initialize page section
+  for (var i = 0; i < destinations.length; i++) {
+    city = destinations[i].city;
+    country = destinations[i].country;
+    getWeather(city, country);
+  }
+  background();
 });
+//************************************************************
 //----------------------------------END FIREBASE-----------------------------------------------
-
-//-----------------------------FUNCTIONS THAT RUN ON PAGE LOAD------------------------------------
-fillCityName();  //move to initalize page functions sections
-displayPrice(); //move to initialize functions
-travelPakage(); //move to initialize functions
-//move to initialize page section
-for (var i = 0; i < destinations.length; i++) {
-  city = destinations[i].city;
-  country = destinations[i].country; 
-  getWeather(city, country);
-}
-background();
 
 //-------------------------------------------------------------------------------------------
 //-----------------------------------------------FUNCTIONS----------------------------------------
 //function that updates the firebase database when user clicks on div
-$('.box').on('click', function() {
-  var numOfClicks = [
-    dest0_clicks,
-    dest1_clicks,
-    dest2_clicks,
-    dest3_clicks,
-    dest4_clicks,
-    dest5_clicks,
-    dest6_clicks,
-    dest7_clicks,
-    dest8_clicks,
-    dest9_clicks
-  ];
-
+$('.box').on('click', function() {//*****
   travelID = $(this).attr('id');
   var lastChar = travelID.substr(4);
-  numOfClicks[lastChar]++;
+  destinations[lastChar].clicks++;
   database.ref(`travel_packages/${travelID}`).set({
-    clicks: numOfClicks[lastChar]
+    clicks: destinations[lastChar].clicks
   });
 });
 
-//function to fill in city names and things to do 
+//function to fill in city names and things to do
 function fillCityName() {
   var cityDiv, cityText, countryCode;
   for (var i in destinations) {
@@ -370,14 +417,10 @@ function fillCityName() {
 //function to put in currency info into destinations objects
 function fillCurrencyInfo() {
   var currencyList = currencyResponse.responseJSON.currencies;
-  console.log('currencyList:');
-  console.log(currencyList);
-
   var rateList = rateResponse.responseJSON.quotes;
-  console.log('rateList:');
-  console.log(rateList);
 
   var currencyDiv, currencyText, countryCode;
+  debugger;
   for (var i in destinations) {
     currencyDiv = '#dest' + i + ' .currency';
     countryCode = destinations[i].currencyCode;
@@ -392,51 +435,55 @@ function fillCurrencyInfo() {
   }
 }
 
-jQuery.when(currencyResponse, rateResponse).done(fillCurrencyInfo);
+// jQuery.when(currencyResponse, rateResponse).done(fillCurrencyInfo);
 
 // function to sort divs with button press
-$('#buttonDiv a').on('click', function() {
+$('#navbarSupportedContent a').on('click', function() {
   var buttonID = $(this).attr('id');
   var buttonStatus = $(this).attr('status');
   destinations.sort(function(a, b) {
     if (buttonID == 'sortPopular') {
-      if (buttonStatus == "ascending"){
-        $('#sortPopular').attr('status','decending');
+      if (buttonStatus == 'ascending') {
+        $('#sortPopular').attr('status', 'decending');
         return a.clicks - b.clicks;
       } else {
-        $('#sortPopular').attr('status','ascending');
+        $('#sortPopular').attr('status', 'ascending');
         return b.clicks - a.clicks;
       }
-    }
-    else if (buttonID == 'sortPrice') {
-      if (buttonStatus == "ascending"){
-        $('#sortPrice').attr('status','decending');
+    } else if (buttonID == 'sortPrice') {
+      if (buttonStatus == 'ascending') {
+        $('#sortPrice').attr('status', 'decending');
         return a.currentPrice - b.currentPrice;
       } else {
-        $('#sortPrice').attr('status','ascending');
+        $('#sortPrice').attr('status', 'ascending');
         return b.currentPrice - a.currentPrice;
       }
-    }
-    else {
-      if (buttonStatus == "ascending"){
-        $('#sortDuration').attr('status','decending');
+    } else {
+      if (buttonStatus == 'ascending') {
+        $('#sortDuration').attr('status', 'decending');
         return a.duration - b.duration;
       } else {
-        $('#sortDuration').attr('status','ascending');
+        $('#sortDuration').attr('status', 'ascending');
         return b.duration - a.duration;
       }
     }
   });
-  console.log('sortedDestinations');
-  console.log(destinations);
+
   weatherCount = 1;
   fillCityName();
   fillCurrencyInfo();
-  displayWeather();
   background();
-  displayPrice();
-});
+  displayPriceDuration();
+  displayWeather();
 
+  //update number of clicks to firebase*****
+  for (var i in destinations) {
+    database.ref('travel_packages/dest' + i).set({
+      clicks: destinations[i].clicks,
+      name: destinations[i].city
+    });
+  }
+});
 
 //function that puts appropriate weather info into the divs and display on page
 function displayWeather() {
@@ -445,19 +492,11 @@ function displayWeather() {
     for (var j = 0; j < 7; j++) {
       content = '';
       content +=
-        '<h6>Avg Temp: ' +
-        destinations[i].weather.data[j].temp +
-        '&#176; C</h6>';
-      content +=
-        '<h6>Precipitation: ' + destinations[i].weather.data[j].pop + '%</h6>';
+        '<div>' + destinations[i].weather.data[j].temp + '&#176; C' + '</div>';
       content +=
         "<img src = 'https://www.weatherbit.io/static/img/icons/" +
         destinations[i].weather.data[j].weather.icon +
         ".png' alt='icon' width='30' height='30'>";
-      content +=
-        '<br><h6>' +
-        destinations[i].weather.data[j].weather.description +
-        '</h6>';
       $('#dest' + (weatherCount - 1) + ' .weather #day' + (j + 1)).html(
         content
       );
@@ -475,7 +514,7 @@ function getWeather(a, b) {
     b +
     '&key=' +
     weatherAPIKey;
-  console.log(queryURL);
+
   $.ajax({ url: queryURL }).then(function(response) {
     for (var i = 0; i < destinations.length; i++) {
       if (destinations[i].city == a) {
@@ -489,22 +528,24 @@ function getWeather(a, b) {
   });
 }
 
-
 //function that adds ticket price to the city
-function displayPrice() {
+function displayPriceDuration() {
   var priceDiv;
   for (var i = 0; i < destinations.length; i++) {
     priceDiv = '#dest' + i + ' .price';
     currentPrice = destinations[i].ticketPrice[currMonthIndex][week];
     destinations[i].currentPrice = currentPrice;
-    $(priceDiv).text(currentPrice);
+    if (destinations[i].duration == '1') {
+      $(priceDiv).text(`${destinations[i].duration} day for $${currentPrice}`);
+    } else {
+      $(priceDiv).text(`${destinations[i].duration} days for $${currentPrice}`);
+    }
   }
 }
 
-
 //function that Populate things to do in appropriate boxes
 function thingsToDo(index) {
-  $('#dest' + index + ' .places').html("");
+  $('#dest' + index + ' .places').html('Places to See');
   var newli, newul;
   newul = $('<ul>');
   for (var j = 0; j < destinations[index].stufftodo.length; j++) {
@@ -515,23 +556,43 @@ function thingsToDo(index) {
 }
 
 //function that refreshes background image in dest divs
-function background(){
-  for (var i in destinations){
-    $("#dest"+i).css("background",'url("assets/'+destinations[i].city +'.jpg")');
+function background() {
+  for (var i in destinations) {
+    $('#dest' + i).css(
+      'background-image',
+      'linear-gradient(to right bottom, rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("assets/' +
+        destinations[i].city +
+        '.jpg")'
+    );
   }
 }
 
-//Functions that display additional information when user hovers over destinations
+// Functions that display additional information when user hovers over destinations
 $(document).on('mouseenter', '.box', function() {
   $(this)
-    .children()
-    .show();
+    .find('.hidden')
+    .removeClass('hidden');
+  $(this)
+    .find('.summary')
+    .addClass('row');
 });
 $(document).on('mouseleave', '.box', function() {
   $(this)
-    .children()
-    .hide();
-  });
+    .find('.places')
+    .addClass('hidden');
+  $(this)
+    .find('.currency')
+    .addClass('hidden');
+  $(this)
+    .find('.weather')
+    .addClass('hidden');
+  $(this)
+    .find('.purchase')
+    .addClass('hidden');
+  $(this)
+    .find('.summary')
+    .removeClass('row');
+});
 
 //function that calls for Stripe integration
 function travelPakage() {
@@ -548,8 +609,6 @@ function travelPakage() {
   }
 }
 
-
-
 var handler = StripeCheckout.configure({
   key: 'pk_test_PAkJqhf7aSDhFhy4yh7qJLsR',
   image: 'http://logonoid.com/images/yves-saint-laurent-logo.jpg',
@@ -559,7 +618,6 @@ var handler = StripeCheckout.configure({
     // Get the token ID to your server-side code for use.
   }
 });
-
 
 $('.purchase').on('click', function(e) {
   var city = $(this).attr('data-city');
@@ -582,7 +640,7 @@ window.addEventListener('popstate', function() {
 
 //intercom
 window.intercomSettings = {
-    app_id: "qcf7lbf5",
+    app_id: "qcf7lbf5"
 };
 
 (function() {
@@ -591,34 +649,28 @@ window.intercomSettings = {
   if (typeof ic === 'function') {
     ic('reattach_activator');
     ic('update', intercomSettings);
-  } 
-  else {
+  } else {
     var d = document;
-    var i = function() 
-      {
+    var i = function() {
       i.c(arguments);
-      };
+    };
     i.q = [];
-    i.c = function(args) 
-      {
+    i.c = function(args) {
       i.q.push(args);
-      };
+    };
     w.Intercom = i;
-    function l() 
-      {
-        var s = d.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = 'https://widget.intercom.io/widget/qcf7lbf5';
-        var x = d.getElementsByTagName('script')[0];
-        x.parentNode.insertBefore(s, x);
-      }
+    function l() {
+      var s = d.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://widget.intercom.io/widget/qcf7lbf5';
+      var x = d.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
     if (w.attachEvent) {
       w.attachEvent('onload', l);
-    } 
-    else {
+    } else {
       w.addEventListener('load', l, false);
     }
   }
 })();
-
