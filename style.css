@@ -96,6 +96,10 @@ body {
   animation-timing-function: ease-out;
 }
 
+#dest4 .currency, #dest6 .currency, #dest9 .currency{
+  margin: 30px 0 10px;
+}
+
 .purchase {
   color: white;
   background-color: transparent;

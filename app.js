@@ -320,9 +320,9 @@ var rateResponse = $.ajax({
 //weather API JS
 var weatherCount = 1;
 // This is our API key. Add your own API key between the ""
-// var weatherAPIKey = "798ea114a6654cf1a775a5fce9773800";
+var weatherAPIKey = '798ea114a6654cf1a775a5fce9773800';
 //2nd API key
-var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
+// var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
 //3rd API key
 // var weatherAPIKey = '8021344adf024b6db2d7d6ab2d21e3e0';
 var city = '';
@@ -365,45 +365,44 @@ var config = {
 
 firebase.initializeApp(config);
 
-// Create a variable to reference the database.
+// Create a variable to reference the database.*************************
 var database = firebase.database();
 var travelID;
-var dest0_clicks,
-  dest1_clicks,
-  dest2_clicks,
-  dest3_clicks,
-  dest4_clicks,
-  dest5_clicks,
-  dest6_clicks,
-  dest7_clicks,
-  dest8_clicks,
-  dest9_clicks;
 var travel_packages = database.ref().child('travel_packages');
 
-travel_packages.on('value', function(snap) {
-  dest0_clicks = snap.val().dest0.clicks;
-  dest1_clicks = snap.val().dest1.clicks;
-  dest2_clicks = snap.val().dest2.clicks;
-  dest3_clicks = snap.val().dest3.clicks;
-  dest4_clicks = snap.val().dest4.clicks;
-  dest5_clicks = snap.val().dest5.clicks;
-  dest6_clicks = snap.val().dest6.clicks;
-  dest7_clicks = snap.val().dest7.clicks;
-  dest8_clicks = snap.val().dest8.clicks;
-  dest9_clicks = snap.val().dest9.clicks;
-});
-
-//on page loads, add number of clicks to the destinations object
-travel_packages.once('value').then(function(snap) {
-  var numberOfClicks = [];
-  snap.forEach(function(child) {
-    numberOfClicks.push(child.val().clicks);
-  });
-
-  for (var dest in destinations) {
-    destinations[dest].clicks = numberOfClicks[dest];
+travel_packages.once('value', function(snap) {
+  //on page load/getting of firebase info, sort destinations array to match the order of cities in firebase
+  var tempDestinations = [];
+  for (var j in snap.val()) {
+    for (var i in destinations) {
+      if (destinations[i].city == snap.val()[j].name) {
+        tempDestinations.push(destinations[i]);
+        break;
+      }
+    }
   }
+  destinations = tempDestinations;
+  // console.log("destinations should now match snap");
+  // console.log(destinations);
+  // console.log(snap.val());
+  //then update number of clicks from firebase into new destinations array
+  // debugger;
+  for (var k in destinations) {
+    destinations[k].clicks = snap.val()['dest' + k].clicks;
+  }
+  //then run all the functions that should run on page load
+  fillCityName(); //move to initalize page functions sections
+  displayPriceDuration(); //move to initialize functions
+  travelPakage(); //move to initialize functions
+  //move to initialize page section
+  for (var i = 0; i < destinations.length; i++) {
+    city = destinations[i].city;
+    country = destinations[i].country;
+    getWeather(city, country);
+  }
+  background();
 });
+//************************************************************
 //----------------------------------END FIREBASE-----------------------------------------------
 
 //-----------------------------FUNCTIONS THAT RUN ON PAGE LOAD------------------------------------
@@ -483,7 +482,7 @@ function fillCurrencyInfo() {
 jQuery.when(currencyResponse, rateResponse).done(fillCurrencyInfo);
 
 // function to sort divs with button press
-$('#buttonDiv a').on('click', function() {
+$('#navbarSupportedContent a').on('click', function() {
   var buttonID = $(this).attr('id');
   var buttonStatus = $(this).attr('status');
   destinations.sort(function(a, b) {
@@ -521,6 +520,14 @@ $('#buttonDiv a').on('click', function() {
   displayWeather();
   background();
   displayPriceDuration();
+
+  //update number of clicks to firebase*****
+  for (var i in destinations) {
+    database.ref('travel_packages/dest' + i).set({
+      clicks: destinations[i].clicks,
+      name: destinations[i].city
+    });
+  }
 });
 
 //function that puts appropriate weather info into the divs and display on page
@@ -611,7 +618,9 @@ $(document).on('mouseenter', '.box', function() {
   $(this)
     .find('.hidden')
     .removeClass('hidden');
-  $('.summary').addClass('row');
+  $(this)
+    .find('.summary')
+    .addClass('row');
 });
 $(document).on('mouseleave', '.box', function() {
   $(this)
@@ -626,7 +635,9 @@ $(document).on('mouseleave', '.box', function() {
   $(this)
     .find('.purchase')
     .addClass('hidden');
-  $('.summary').removeClass('row');
+  $(this)
+    .find('.summary')
+    .removeClass('row');
 });
 
 //function that calls for Stripe integration
@@ -674,38 +685,38 @@ window.addEventListener('popstate', function() {
 });
 
 //intercom
-// window.intercomSettings = {
-//     app_id: "qcf7lbf5"
-// };
+window.intercomSettings = {
+    app_id: "qcf7lbf5"
+};
 
-// (function() {
-//   var w = window;
-//   var ic = w.Intercom;
-//   if (typeof ic === 'function') {
-//     ic('reattach_activator');
-//     ic('update', intercomSettings);
-//   } else {
-//     var d = document;
-//     var i = function() {
-//       i.c(arguments);
-//     };
-//     i.q = [];
-//     i.c = function(args) {
-//       i.q.push(args);
-//     };
-//     w.Intercom = i;
-//     function l() {
-//       var s = d.createElement('script');
-//       s.type = 'text/javascript';
-//       s.async = true;
-//       s.src = 'https://widget.intercom.io/widget/qcf7lbf5';
-//       var x = d.getElementsByTagName('script')[0];
-//       x.parentNode.insertBefore(s, x);
-//     }
-//     if (w.attachEvent) {
-//       w.attachEvent('onload', l);
-//     } else {
-//       w.addEventListener('load', l, false);
-//     }
-//   }
-// })();
+(function() {
+  var w = window;
+  var ic = w.Intercom;
+  if (typeof ic === 'function') {
+    ic('reattach_activator');
+    ic('update', intercomSettings);
+  } else {
+    var d = document;
+    var i = function() {
+      i.c(arguments);
+    };
+    i.q = [];
+    i.c = function(args) {
+      i.q.push(args);
+    };
+    w.Intercom = i;
+    function l() {
+      var s = d.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://widget.intercom.io/widget/qcf7lbf5';
+      var x = d.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (w.attachEvent) {
+      w.attachEvent('onload', l);
+    } else {
+      w.addEventListener('load', l, false);
+    }
+  }
+})();
