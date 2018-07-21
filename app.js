@@ -30,8 +30,7 @@ var destinations = [
       "St. Michael's Cathedral",
       'National Heroes Square',
       'Barbados Garrison'
-    ],
-    backgoundImgCopyright: 'Business Barbados'
+    ]
   },
   {
     city: 'Zurich',
@@ -60,8 +59,7 @@ var destinations = [
       'Kunsthaus Zurich',
       'Bahnhofstrasse',
       'Fraumunster'
-    ],
-    backgoundImgCopyright: 'sbbmch.cl'
+    ]
   },
   {
     city: 'Havana',
@@ -90,8 +88,7 @@ var destinations = [
       'Fortaleza de San Carlos de la Cubana',
       'El Capitolio',
       'Paseo del Prado'
-    ],
-    backgoundImgCopyright: 'Ross Garden Tours'
+    ]
   },
   {
     city: 'Tokyo',
@@ -120,8 +117,7 @@ var destinations = [
       'Asakusa and the Senso-ji Temple',
       'The Meiji Shrine',
       'The Tokyo Skytree'
-    ],
-    backgoundImgCopyright: 'wallsauce.com'
+    ]
   },
   {
     city: 'Johannesburg',
@@ -150,8 +146,7 @@ var destinations = [
       'The Maboneng Precinct',
       'The Lindfield Victorian House Museum',
       'Market Theatre'
-    ],
-    backgoundImgCopyright: 'Andre Roberge (trekearth)'
+    ]
   },
   {
     city: 'Manila',
@@ -180,8 +175,7 @@ var destinations = [
       'San Agustin Church and Museum',
       'Fort Santiago',
       'Divisoria Market'
-    ],
-    backgoundImgCopyright: 'wikipedia'
+    ]
   },
   {
     city: 'Seoul',
@@ -210,8 +204,7 @@ var destinations = [
       'War Memorial of Korea',
       'Noryangjin Fish Market',
       'Namdaemun Market'
-    ],
-    backgoundImgCopyright: 'BBC.com'
+    ]
   },
   {
     city: 'Sydney',
@@ -240,8 +233,7 @@ var destinations = [
       'Queen Victoria Building',
       'Barangaroo Reserve',
       'George Street'
-    ],
-    backgoundImgCopyright: 'parkregiscitycentre.com.au'
+    ]
   },
   {
     city: 'Vancouver',
@@ -270,8 +262,7 @@ var destinations = [
       'Chinatown',
       'Stanley Park',
       'Museum of Vancouver'
-    ],
-    backgoundImgCopyright: 'vancouver.ca'
+    ]
   },
   {
     city: 'Reykjavik',
@@ -300,8 +291,7 @@ var destinations = [
       'Videy Island',
       'The Settlement Exhibition',
       'Whale Watching'
-    ],
-    backgoundImgCopyright: 'grayline.is'
+    ]
   }
 ];
 
@@ -320,18 +310,16 @@ var rateResponse = $.ajax({
 //weather API JS
 var weatherCount = 1;
 // This is our API key. Add your own API key between the ""
-var weatherAPIKey = '798ea114a6654cf1a775a5fce9773800';
+// var weatherAPIKey = '798ea114a6654cf1a775a5fce9773800';
 //2nd API key
-// var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
+var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
 //3rd API key
 // var weatherAPIKey = '8021344adf024b6db2d7d6ab2d21e3e0';
 var city = '';
 var country = '';
 var queryURL = '';
-var newTable, newTr, newTd;
 var queryURLResponse;
 var resCount = 0;
-var obj;
 
 //------------------------------------------------------------------
 //Display Price based on the current week
@@ -382,15 +370,12 @@ travel_packages.once('value', function(snap) {
     }
   }
   destinations = tempDestinations;
-  // console.log("destinations should now match snap");
-  // console.log(destinations);
-  // console.log(snap.val());
   //then update number of clicks from firebase into new destinations array
-  // debugger;
   for (var k in destinations) {
     destinations[k].clicks = snap.val()['dest' + k].clicks;
   }
   //then run all the functions that should run on page load
+  fillCurrencyInfo();
   fillCityName(); //move to initalize page functions sections
   displayPriceDuration(); //move to initialize functions
   travelPakage(); //move to initialize functions
@@ -405,40 +390,15 @@ travel_packages.once('value', function(snap) {
 //************************************************************
 //----------------------------------END FIREBASE-----------------------------------------------
 
-//-----------------------------FUNCTIONS THAT RUN ON PAGE LOAD------------------------------------
-fillCityName(); //move to initalize page functions sections
-displayPriceDuration(); //move to initialize functions
-travelPakage(); //move to initialize functions
-//move to initialize page section
-for (var i = 0; i < destinations.length; i++) {
-  city = destinations[i].city;
-  country = destinations[i].country;
-  getWeather(city, country);
-}
-background();
-
 //-------------------------------------------------------------------------------------------
 //-----------------------------------------------FUNCTIONS----------------------------------------
 //function that updates the firebase database when user clicks on div
-$('.box').on('click', function() {
-  var numOfClicks = [
-    dest0_clicks,
-    dest1_clicks,
-    dest2_clicks,
-    dest3_clicks,
-    dest4_clicks,
-    dest5_clicks,
-    dest6_clicks,
-    dest7_clicks,
-    dest8_clicks,
-    dest9_clicks
-  ];
-
+$('.box').on('click', function() {//*****
   travelID = $(this).attr('id');
   var lastChar = travelID.substr(4);
-  numOfClicks[lastChar]++;
+  destinations[lastChar].clicks++;
   database.ref(`travel_packages/${travelID}`).set({
-    clicks: numOfClicks[lastChar]
+    clicks: destinations[lastChar].clicks
   });
 });
 
@@ -457,14 +417,10 @@ function fillCityName() {
 //function to put in currency info into destinations objects
 function fillCurrencyInfo() {
   var currencyList = currencyResponse.responseJSON.currencies;
-  console.log('currencyList:');
-  console.log(currencyList);
-
   var rateList = rateResponse.responseJSON.quotes;
-  console.log('rateList:');
-  console.log(rateList);
 
   var currencyDiv, currencyText, countryCode;
+  debugger;
   for (var i in destinations) {
     currencyDiv = '#dest' + i + ' .currency';
     countryCode = destinations[i].currencyCode;
@@ -479,7 +435,7 @@ function fillCurrencyInfo() {
   }
 }
 
-jQuery.when(currencyResponse, rateResponse).done(fillCurrencyInfo);
+// jQuery.when(currencyResponse, rateResponse).done(fillCurrencyInfo);
 
 // function to sort divs with button press
 $('#navbarSupportedContent a').on('click', function() {
@@ -512,14 +468,13 @@ $('#navbarSupportedContent a').on('click', function() {
       }
     }
   });
-  console.log('sortedDestinations');
-  console.log(destinations);
+
   weatherCount = 1;
   fillCityName();
   fillCurrencyInfo();
-  displayWeather();
   background();
   displayPriceDuration();
+  displayWeather();
 
   //update number of clicks to firebase*****
   for (var i in destinations) {
@@ -545,7 +500,6 @@ function displayWeather() {
       $('#dest' + (weatherCount - 1) + ' .weather #day' + (j + 1)).html(
         content
       );
-      console.log('content', content);
     }
     weatherCount++;
   }
@@ -560,7 +514,7 @@ function getWeather(a, b) {
     b +
     '&key=' +
     weatherAPIKey;
-  console.log(queryURL);
+
   $.ajax({ url: queryURL }).then(function(response) {
     for (var i = 0; i < destinations.length; i++) {
       if (destinations[i].city == a) {

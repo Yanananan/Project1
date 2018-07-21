@@ -182,109 +182,13 @@ button:focus {
   }
 }
 
-#dest6,
+/* #dest6,
 #dest7 {
   background-position: bottom;
-}
+} */
 
-#dest0:hover {
+#dest0:hover, #dest1:hover, #dest2:hover, #dest3:hover, #dest4:hover, #dest5:hover, #dest6:hover, #dest7:hover, #dest8:hover, #dest9:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('assets/Bridgetown.jpg');
-}
-
-#dest1:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('assets/Zurich.jpg');
-}
-
-#dest2:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('assets/Havana.jpg');
-}
-
-#dest3:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('assets/Tokyo.jpg');
-}
-
-#dest4:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('assets/Johannesburg.jpg');
-}
-
-#dest5:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('assets/Manila.jpg');
-}
-
-#dest6:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('assets/Seoul.jpg');
-}
-
-#dest7:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('assets/Sydney.jpg');
-}
-
-#dest8:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('assets/Vancouver.jpg');
-}
-
-#dest9:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url('assets/Reykjavik.jpg');
 }
 
 ul {
