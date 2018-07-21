@@ -312,9 +312,9 @@ var weatherCount = 1;
 // This is our API key. Add your own API key between the ""
 // var weatherAPIKey = '798ea114a6654cf1a775a5fce9773800';
 //2nd API key
-var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
+// var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
 //3rd API key
-// var weatherAPIKey = '8021344adf024b6db2d7d6ab2d21e3e0';
+var weatherAPIKey = '8021344adf024b6db2d7d6ab2d21e3e0';
 var city = '';
 var country = '';
 var queryURL = '';
@@ -398,7 +398,8 @@ $('.box').on('click', function() {//*****
   var lastChar = travelID.substr(4);
   destinations[lastChar].clicks++;
   database.ref(`travel_packages/${travelID}`).set({
-    clicks: destinations[lastChar].clicks
+    clicks: destinations[lastChar].clicks,
+    name: destinations[lastChar].city
   });
 });
 
@@ -418,9 +419,8 @@ function fillCityName() {
 function fillCurrencyInfo() {
   var currencyList = currencyResponse.responseJSON.currencies;
   var rateList = rateResponse.responseJSON.quotes;
-
   var currencyDiv, currencyText, countryCode;
-  debugger;
+
   for (var i in destinations) {
     currencyDiv = '#dest' + i + ' .currency';
     countryCode = destinations[i].currencyCode;
@@ -611,7 +611,7 @@ function travelPakage() {
 
 var handler = StripeCheckout.configure({
   key: 'pk_test_PAkJqhf7aSDhFhy4yh7qJLsR',
-  image: 'http://logonoid.com/images/yves-saint-laurent-logo.jpg',
+  image: 'https://yanananan.github.io/Project1/assets/logo_cir.png',
   locale: 'auto',
   token: function(token) {
     // You can access the token ID with `token.id`.
