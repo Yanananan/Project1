@@ -312,9 +312,9 @@ var weatherCount = 1;
 // This is our API key. Add your own API key between the ""
 // var weatherAPIKey = '798ea114a6654cf1a775a5fce9773800';
 //2nd API key
-// var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
+var weatherAPIKey = 'd248772fc33441a58bfa6336cdc83ae6';
 //3rd API key
-var weatherAPIKey = '8021344adf024b6db2d7d6ab2d21e3e0';
+// var weatherAPIKey = '8021344adf024b6db2d7d6ab2d21e3e0';
 var city = '';
 var country = '';
 var queryURL = '';
