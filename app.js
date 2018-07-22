@@ -330,11 +330,11 @@ var week;
 
 if (dayOfMonth < 8) {
   week = 0;
-} else if (dayOfMonth > 7 && dayOfMonth < 15) {
+} else if (dayOfMonth >= 8 && dayOfMonth < 15) {
   week = 1;
-} else if (dayOfMonth > 14 && dayOfMonth < 22) {
+} else if (dayOfMonth >= 15 && dayOfMonth < 22) {
   week = 2;
-} else if (dayOfMonth > 22) {
+} else if (dayOfMonth >= 22) {
   week = 3;
 }
 //------------------------------------------------------------------------
